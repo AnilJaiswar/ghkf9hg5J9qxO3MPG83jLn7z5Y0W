@@ -1,0 +1,892 @@
+/* ==========================================================================
+   THEME D: BIOPHILIC FLOW — ORGANIC NATURE WAVES & STORY
+   Supports BOTH Light Mode (Meadow Sage) and Dark Mode (Enchanted Night Forest)
+   ========================================================================== */
+
+.theme-d-container {
+  --bio-bg: #f9fbf7;
+  --bio-sage-light: #edf4ea;
+  --bio-sage-mid: #8ba97b;
+  --bio-sage-dark: #35533c;
+  --bio-forest: #223828;
+  --bio-cream: #fcfbf7;
+  --bio-yellow: #f8df8c;
+  --bio-ink: #223427;
+  --bio-ink-muted: #566d5b;
+  --bio-border: #dbe6d9;
+  --bio-bubble-bg: #ffffff;
+  --bio-font-serif: 'Fraunces', 'Lora', Georgia, serif;
+  --bio-font-sans: 'Quicksand', 'Nunito', system-ui, sans-serif;
+
+  background-color: var(--bio-bg);
+  color: var(--bio-ink);
+  font-family: var(--bio-font-sans);
+  min-height: 100vh;
+  padding-bottom: 7rem;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Overrides for Theme D */
+[data-theme-mode="dark"] .theme-d-container,
+.theme-d-container[data-mode="dark"] {
+  --bio-bg: #0d1410;
+  --bio-sage-light: #16221a;
+  --bio-sage-mid: #5b8766;
+  --bio-sage-dark: #1d2d23;
+  --bio-forest: #cbe0d0;
+  --bio-cream: #121b14;
+  --bio-yellow: #fcd34d;
+  --bio-ink: #f0f5ee;
+  --bio-ink-muted: #9cb2a0;
+  --bio-border: #233428;
+  --bio-bubble-bg: #18251d;
+}
+
+[data-theme-mode="dark"] .bio-navbar {
+  background: #121b14;
+  border-color: #233428;
+}
+
+[data-theme-mode="dark"] .bio-brand {
+  color: #cbe0d0;
+}
+
+[data-theme-mode="dark"] .bio-nav-link:hover {
+  background: #1d2d23;
+  color: #cbe0d0;
+}
+
+[data-theme-mode="dark"] .bio-hero-section {
+  background: #121b14;
+  border-bottom-color: #233428;
+}
+
+[data-theme-mode="dark"] .bio-section-sage {
+  background: #16221a;
+  border-bottom-color: #233428;
+}
+
+[data-theme-mode="dark"] .bio-section-deep {
+  background: #1d2d23;
+  border-bottom-color: #233428;
+}
+
+[data-theme-mode="dark"] .bio-service-circle {
+  background: #1d2d23;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme-mode="dark"] .bio-bubble-box {
+  background: #18251d;
+  color: #f0f5ee;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme-mode="dark"] .bio-bubble-box::after {
+  border-color: #18251d transparent transparent transparent;
+}
+
+[data-theme-mode="dark"] .bio-bubble-badge {
+  background: #24382b;
+  color: #cbe0d0;
+}
+
+[data-theme-mode="dark"] .bio-contact-section {
+  background: #121b14;
+}
+
+[data-theme-mode="dark"] #bio-timeline {
+  border-bottom-color: #233428;
+}
+
+[data-theme-mode="dark"] .bio-timeline-card {
+  background: #18251d !important;
+  border-color: #233428 !important;
+}
+
+[data-theme-mode="dark"] .bio-contact-card {
+  background: #18251d;
+  border: 1px solid #233428;
+}
+
+[data-theme-mode="dark"] .bio-contact-card input,
+[data-theme-mode="dark"] .bio-contact-card textarea {
+  background: #121b14 !important;
+  color: #f0f5ee !important;
+  border-color: #2b3e30 !important;
+}
+
+.bio-wave-divider {
+  display: none !important;
+}
+
+/* Organic Top Navigation */
+.bio-navbar {
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bio-cream);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--bio-border);
+}
+
+.bio-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--bio-forest);
+}
+
+.bio-brand-icon {
+  font-size: 1.5rem;
+}
+
+.bio-brand-title {
+  font-family: var(--bio-font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.bio-brand-sub {
+  font-size: 0.72rem;
+  color: var(--bio-ink-muted);
+}
+
+.bio-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.bio-nav-link {
+  text-decoration: none;
+  color: var(--bio-ink-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.bio-nav-link:hover {
+  background: var(--bio-sage-light);
+  color: var(--bio-forest);
+}
+
+/* Organic Hero Section */
+.bio-hero-section {
+  background: var(--bio-cream);
+  padding: 4.5rem 3rem 4rem 3rem;
+  position: relative;
+  border-bottom: 1px solid var(--bio-border);
+}
+
+.bio-hero-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.bio-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bio-sage-light);
+  color: var(--bio-forest);
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--bio-border);
+  margin-bottom: 1.25rem;
+}
+
+[data-theme-mode="dark"] .bio-hero-badge {
+  background: #18251d;
+  color: #cbe0d0;
+  border-color: #233428;
+}
+
+.bio-hero-headline {
+  font-family: var(--bio-font-serif);
+  font-size: 3.25rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--bio-forest);
+  margin-bottom: 0.85rem;
+}
+
+.bio-hero-sub {
+  font-family: var(--bio-font-serif);
+  font-size: 1.22rem;
+  color: var(--bio-forest);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  opacity: 0.92;
+}
+
+.bio-hero-lead {
+  font-size: 1.02rem;
+  line-height: 1.68;
+  color: var(--bio-ink-muted);
+  margin-bottom: 2rem;
+  max-width: 560px;
+}
+
+.bio-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bio-btn-leaf {
+  background: var(--bio-sage-mid);
+  color: #ffffff;
+  padding: 0.85rem 1.85rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(158, 184, 141, 0.4);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.bio-btn-leaf:hover {
+  background: var(--bio-sage-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(77, 114, 86, 0.4);
+}
+
+.bio-btn-outline {
+  background: transparent;
+  color: var(--bio-forest);
+  padding: 0.85rem 1.85rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--bio-sage-mid);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bio-btn-outline:hover {
+  background: var(--bio-sage-light);
+}
+
+/* Symmetrical Right Illustration with Floating Badges */
+.bio-hero-illustration-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-hero-illustration {
+  position: relative;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(77, 114, 86, 0.15);
+  border: 2px solid var(--bio-border);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--bio-cream);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme-mode="dark"] .bio-hero-illustration {
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+  border-color: #25392b;
+}
+
+.bio-hero-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bio-hero-float-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.65rem 1.15rem;
+  border-radius: 18px;
+  border: 1px solid var(--bio-border);
+  box-shadow: 0 10px 25px rgba(45, 74, 53, 0.12);
+  z-index: 2;
+  animation: bioFloat 5s ease-in-out infinite alternate;
+}
+
+[data-theme-mode="dark"] .bio-hero-float-badge {
+  background: rgba(24, 37, 29, 0.94);
+  border-color: #283c2e;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.bio-float-1 {
+  top: -14px;
+  right: -14px;
+}
+
+.bio-float-2 {
+  bottom: -16px;
+  left: -14px;
+  animation-delay: -2.5s;
+}
+
+@keyframes bioFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+.bio-float-icon {
+  font-size: 1.35rem;
+}
+
+.bio-float-val {
+  font-family: var(--bio-font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--bio-forest);
+  line-height: 1.2;
+}
+
+.bio-float-lbl {
+  font-size: 0.74rem;
+  color: var(--bio-ink-muted);
+}
+
+/* Multi-Layered Organic Wavy Dividers - Removed for straight clean transitions */
+.bio-wave-divider {
+  display: none !important;
+}
+
+/* Sage Green Section: Summary & Scale */
+.bio-section-sage {
+  background: var(--bio-sage-light);
+  padding: 5rem 3rem;
+  position: relative;
+  transition: background 0.3s ease;
+  border-bottom: 1px solid var(--bio-border);
+}
+
+.bio-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bio-section-header {
+  margin-bottom: 2.75rem;
+}
+
+.bio-kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--bio-sage-dark);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.bio-kicker-light {
+  color: #9eb88d;
+}
+
+[data-theme-mode="dark"] .bio-kicker {
+  color: #9cb2a0;
+}
+
+.bio-section-title {
+  font-family: var(--bio-font-serif);
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--bio-forest);
+  margin-bottom: 0.85rem;
+  line-height: 1.2;
+}
+
+.bio-section-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--bio-ink);
+  max-width: 840px;
+  margin-bottom: 0;
+}
+
+.bio-section-sub {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 840px;
+}
+
+/* Tier 1: 4 Key Scale Metric Cards */
+.bio-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.bio-metric-card {
+  background: #ffffff;
+  border: 1px solid var(--bio-border);
+  border-radius: 20px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 8px 24px rgba(77, 114, 86, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bio-metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(77, 114, 86, 0.12);
+}
+
+[data-theme-mode="dark"] .bio-metric-card {
+  background: #18251d;
+  border-color: #24382b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme-mode="dark"] .bio-metric-card:hover {
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+}
+
+.bio-metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.bio-metric-num {
+  font-family: var(--bio-font-serif);
+  font-size: 2.35rem;
+  font-weight: 700;
+  color: var(--bio-forest);
+  line-height: 1;
+}
+
+.bio-metric-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--bio-sage-light);
+  color: var(--bio-forest);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+[data-theme-mode="dark"] .bio-metric-pill {
+  background: #233428;
+  color: #cbe0d0;
+}
+
+.bio-metric-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--bio-ink);
+  margin-bottom: 0.4rem;
+}
+
+.bio-metric-detail {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--bio-ink-muted);
+  margin: 0;
+}
+
+/* Tier 2: 4 Core Architectural & Technical Pillars */
+.bio-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.bio-pillar-card {
+  background: #ffffff;
+  border: 1px solid var(--bio-border);
+  border-radius: 22px;
+  padding: 1.85rem;
+  box-shadow: 0 8px 24px rgba(77, 114, 86, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bio-pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(77, 114, 86, 0.12);
+}
+
+[data-theme-mode="dark"] .bio-pillar-card {
+  background: #18251d;
+  border-color: #24382b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme-mode="dark"] .bio-pillar-card:hover {
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+}
+
+.bio-pillar-icon-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.15rem;
+}
+
+.bio-pillar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--bio-sage-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+[data-theme-mode="dark"] .bio-pillar-icon {
+  background: #233428;
+}
+
+.bio-pillar-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--bio-forest);
+  background: var(--bio-sage-light);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+[data-theme-mode="dark"] .bio-pillar-badge {
+  background: #233428;
+  color: #cbe0d0;
+}
+
+.bio-pillar-title {
+  font-family: var(--bio-font-serif);
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: var(--bio-forest);
+  margin-bottom: 0.65rem;
+}
+
+.bio-pillar-desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--bio-ink-muted);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.bio-pillar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.bio-pillar-tags span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--bio-forest);
+  background: var(--bio-sage-light);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+[data-theme-mode="dark"] .bio-pillar-tags span {
+  background: #203125;
+  color: #cbe0d0;
+}
+
+/* Deep Green Reviews / Projects Band */
+.bio-section-deep {
+  background: var(--bio-sage-dark);
+  color: #ffffff;
+  padding: 5rem 3rem;
+  position: relative;
+  transition: background 0.3s ease;
+  border-bottom: 1px solid var(--bio-border);
+}
+
+.bio-section-deep .bio-section-title {
+  color: #ffffff;
+}
+
+/* Client Trust Strip */
+.bio-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.75rem 0 2.5rem 0;
+}
+
+.bio-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.bio-trust-pill:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+/* Speech Bubble Style Project Cards */
+.bio-bubbles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.bio-speech-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.bio-speech-card:hover {
+  transform: translateY(-5px);
+}
+
+.bio-bubble-box {
+  background: var(--bio-bubble-bg);
+  color: var(--bio-ink);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  flex-grow: 1;
+}
+
+.bio-bubble-box::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 36px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 14px 0 0;
+  border-color: var(--bio-bubble-bg) transparent transparent transparent;
+}
+
+.bio-bubble-title {
+  font-family: var(--bio-font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--bio-forest);
+  margin-bottom: 0.75rem;
+}
+
+.bio-bubble-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--bio-ink-muted);
+  margin-bottom: 1.25rem;
+}
+
+.bio-bubble-badge {
+  display: inline-block;
+  background: var(--bio-sage-light);
+  color: var(--bio-forest);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.bio-bubble-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.bio-author-avatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--bio-cream);
+  color: var(--bio-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+}
+
+.bio-author-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.bio-author-sub {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Organic Nature Contact & Timeline Sections */
+.bio-contact-section {
+  background: var(--bio-cream);
+  padding: 5rem 3rem;
+  transition: background 0.3s ease;
+}
+
+#bio-timeline {
+  border-bottom: 1px solid var(--bio-border);
+}
+
+.bio-timeline-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(77, 114, 86, 0.08);
+  border: 1px solid var(--bio-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bio-contact-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 32px;
+  padding: 3.5rem;
+  box-shadow: 0 20px 40px rgba(77, 114, 86, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.bio-contact-info-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bio-contact-form-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+}
+
+.bio-contact-form-col form {
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+  .bio-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bio-hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .bio-hero-actions {
+    justify-content: center;
+  }
+
+  .bio-hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .bio-contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-nav-links {
+    display: none;
+  }
+
+  .bio-hero-section,
+  .bio-section-sage,
+  .bio-section-deep,
+  .bio-contact-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .bio-hero-headline {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .bio-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-hero-float-badge {
+    display: none;
+  }
+}

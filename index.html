@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-mode="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anilkumar R. Jaiswar — Sr. Android Developer | Banking & Fintech Specialist</title>
+  <meta name="description" content="Senior Android Developer with 8+ years of experience (2016–2026) architecting and securing enterprise-level banking applications for HDFC Bank, IndusInd Bank, IDBI Bank, Kotak Mahindra Bank, and Bajaj Finserv.">
+  <meta name="keywords" content="Anilkumar Jaiswar, Senior Android Developer, Banking Apps, VAPT, Play Integrity, Kotlin, Clean Architecture, HDFC Bank, Bajaj Finance">
+  <meta name="author" content="Anilkumar R. Jaiswar">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anilkumar R. Jaiswar — Sr. Android Developer & Banking Specialist">
+  <meta property="og:description" content="8+ Years enterprise mobile engineering. Handled 100M+ downloads across India's top financial institutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aniljaiswar.com">
+
+  <!-- Google Fonts for all 5 Independent Themes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Base & Theme Switcher Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/theme-switcher.css">
+
+  <!-- Dynamic Theme Stylesheet (swapped on theme transition) -->
+  <link id="active-theme-stylesheet" rel="stylesheet" href="styles/theme-a-maly.css">
+
+  <style>
+    /* Print Stylesheet for Instant CV Export */
+    @media print {
+      .theme-compact-hub,
+      .theme-switch-curtain,
+      .project-modal-backdrop,
+      .toast-notification,
+      .maly-masthead,
+      .glass-header-nav,
+      .bio-navbar,
+      .swiss-top-rail {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body data-theme-mode="light">
+
+  <!-- Screen Curtain for Smooth Theme Switching Transitions -->
+  <div id="theme-curtain" class="theme-switch-curtain"></div>
+
+  <!-- Dynamic Theme Root (Mounted by dedicated Theme Renderers) -->
+  <div id="theme-app-root">
+    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: monospace;">
+      <span>Initializing Anilkumar Jaiswar Portfolio...</span>
+    </div>
+  </div>
+
+  <!-- Ultra-Compact Top-Right Theme Hub (Small Footprint, Non-Obtrusive) -->
+  <aside class="theme-compact-hub" id="theme-compact-hub" aria-label="Theme & Mode Controller">
+    <div class="theme-compact-bar">
+      <!-- Theme Dropdown Trigger -->
+      <button id="theme-dropdown-trigger" class="theme-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false" title="Switch Theme (Keyboard: 1-3 or T)">
+        <span id="theme-active-dot" class="theme-active-dot"></span>
+        <span id="theme-active-label" class="theme-dropdown-label">Storybook</span>
+        <span class="theme-caret-icon">▾</span>
+      </button>
+
+      <div class="theme-compact-sep"></div>
+
+      <!-- Dark / Light Mode Toggle Button -->
+      <button id="mode-toggle-btn" class="theme-tool-btn" type="button" title="Toggle Dark/Light Mode (Key: D)">🌙</button>
+
+      <!-- Sound Toggle -->
+      <button id="hud-sound-toggle" class="theme-tool-btn" type="button" title="Toggle Sound FX">🔊</button>
+    </div>
+
+    <!-- Dropdown Menu Popover -->
+    <div class="theme-menu-popover" role="menu">
+      <div class="theme-menu-header">
+        <span>Portfolio Themes</span>
+        <span>Keys [1-3]</span>
+      </div>
+
+      <button class="theme-menu-item is-selected" data-theme="theme-a" role="menuitem">
+        <div class="theme-menu-item-left">
+          <span class="theme-item-dot" style="background: #1e60d5;"></span>
+          <span>Editorial Storybook</span>
+        </div>
+        <span class="theme-menu-key">1</span>
+      </button>
+
+      <button class="theme-menu-item" data-theme="theme-d" role="menuitem">
+        <div class="theme-menu-item-left">
+          <span class="theme-item-dot" style="background: #2e7d32;"></span>
+          <span>Biophilic Flow</span>
+        </div>
+        <span class="theme-menu-key">2</span>
+      </button>
+
+      <button class="theme-menu-item" data-theme="theme-e" role="menuitem">
+        <div class="theme-menu-item-left">
+          <span class="theme-item-dot" style="background: #e2e8f0; border: 1px solid #64748b;"></span>
+          <span>Swiss Grid</span>
+        </div>
+        <span class="theme-menu-key">3</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Shared Technical Project Dossier Modal -->
+  <div id="project-modal" class="project-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="project-modal-dialog">
+      <button class="modal-close-btn" onclick="window.appUtils.closeProjectModal()" aria-label="Close dialog">✕</button>
+      <div id="modal-body-content">
+        <!-- Injected dynamically on click -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-notification" class="toast-notification" role="status">
+    <span id="toast-icon">✨</span>
+    <span id="toast-text">Notification message</span>
+  </div>
+
+  <!-- Zero-dependency Standalone Application Script (Runs on file:/// and http://) -->
+  <script src="bundle.js"></script>
+</body>
+</html>

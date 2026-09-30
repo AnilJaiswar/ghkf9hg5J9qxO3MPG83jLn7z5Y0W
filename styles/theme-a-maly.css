@@ -1,0 +1,956 @@
+/* ==========================================================================
+   THEME A: STUDIO MALY — ARTISTIC ILLUSTRATED STORYBOOK / EDITORIAL SPREAD
+   Supports BOTH Light Mode (Papyrus Cream) and Dark Mode (Midnight Archival)
+   ========================================================================== */
+
+.theme-a-container {
+  --maly-bg: #faf6ee;
+  --maly-bg-subtle: #f3ecdf;
+  --maly-paper: #ffffff;
+  --maly-ink: #1a1a18;
+  --maly-ink-muted: #5e5e56;
+  --maly-blue: #1e60d5;
+  --maly-yellow: #f59e0b;
+  --maly-green: #10b981;
+  --maly-border: #e6dfce;
+  --maly-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --maly-sans: 'Space Mono', monospace, sans-serif;
+  --maly-script: 'Caveat', cursive, sans-serif;
+
+  background-color: var(--maly-bg);
+  background-image:
+    radial-gradient(var(--maly-border) 1px, transparent 1px),
+    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 120px 120px;
+  color: var(--maly-ink);
+  font-family: var(--maly-sans);
+  min-height: 100vh;
+  padding-bottom: 7rem;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Overrides for Theme A */
+[data-theme-mode="dark"] .theme-a-container,
+.theme-a-container[data-mode="dark"] {
+  --maly-bg: #131311;
+  --maly-bg-subtle: #1c1c18;
+  --maly-paper: #191916;
+  --maly-ink: #f4efe4;
+  --maly-ink-muted: #aba596;
+  --maly-blue: #3b82f6;
+  --maly-yellow: #fbbf24;
+  --maly-green: #34d399;
+  --maly-border: #2e2e28;
+
+  background-image:
+    radial-gradient(var(--maly-border) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+[data-theme-mode="dark"] .maly-spread-frame,
+[data-theme-mode="dark"] .maly-bio-grid,
+[data-theme-mode="dark"] .maly-project-card,
+[data-theme-mode="dark"] .maly-skill-cluster,
+[data-theme-mode="dark"] .maly-timeline-item,
+[data-theme-mode="dark"] .maly-contact-spread {
+  box-shadow: 10px 10px 0px #000000;
+  border-color: #383830;
+}
+
+[data-theme-mode="dark"] .maly-doodle-cat {
+  background: #191916;
+  color: #f4efe4;
+  border-color: #383830;
+  box-shadow: 3px 3px 0px #000000;
+}
+
+[data-theme-mode="dark"] .maly-stat-card {
+  background: #161613;
+  border-color: #383830;
+}
+
+[data-theme-mode="dark"] .maly-quote-box {
+  background: #1c1c18;
+}
+
+[data-theme-mode="dark"] .maly-input,
+[data-theme-mode="dark"] .maly-textarea {
+  background: #161613;
+  color: #f4efe4;
+  border-color: #383830;
+}
+
+[data-theme-mode="dark"] .maly-contact-pill {
+  background: #161613;
+  color: #f4efe4;
+  border-color: #383830;
+}
+
+[data-theme-mode="dark"] .maly-contact-pill:hover {
+  background: var(--maly-blue);
+  color: #ffffff;
+}
+
+[data-theme-mode="dark"] .maly-btn-ink {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+[data-theme-mode="dark"] .maly-btn-ink:hover {
+  background: var(--maly-blue);
+  color: #ffffff;
+  border-color: var(--maly-blue);
+}
+
+[data-theme-mode="dark"] .maly-btn-outline {
+  color: #f4efe4;
+  border-color: #f4efe4;
+}
+
+/* Book Top Masthead */
+.maly-masthead {
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--maly-ink);
+  background: var(--maly-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.maly-logo-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.maly-logo-title {
+  font-family: var(--maly-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.maly-logo-sub {
+  font-size: 0.72rem;
+  color: var(--maly-ink-muted);
+  letter-spacing: 0.1em;
+}
+
+.maly-nav-chapters {
+  display: flex;
+  gap: 1.15rem;
+  list-style: none;
+}
+
+.maly-nav-link {
+  color: var(--maly-ink);
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.4rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.maly-nav-link:hover {
+  color: var(--maly-blue);
+}
+
+.maly-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 2px;
+  background: var(--maly-blue);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.maly-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Master Hero Spread */
+.maly-hero-spread {
+  padding: 2rem 3rem 3.5rem 3rem;
+  max-width: 1420px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.maly-spread-frame {
+  background: var(--maly-paper);
+  border: 2px solid var(--maly-ink);
+  box-shadow: 12px 12px 0px var(--maly-ink);
+  padding: 3rem 3.5rem;
+  position: relative;
+  overflow: visible;
+  border-radius: 8px;
+}
+
+.maly-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.75rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left Column: Overview & Credentials */
+.maly-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.maly-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.maly-pill-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  background: var(--maly-blue);
+  color: #ffffff;
+  padding: 0.22rem 0.6rem;
+  border-radius: 4px;
+  border: 1.5px solid var(--maly-ink);
+}
+
+.maly-period-badge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--maly-ink-muted);
+}
+
+.maly-hero-title {
+  font-family: var(--maly-serif);
+  font-size: 2.35rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--maly-ink);
+  line-height: 1.15;
+  margin: 0 0 0.5rem 0;
+}
+
+.maly-hero-subtitle {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--maly-blue);
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.maly-hero-summary {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--maly-ink);
+  margin: 0 0 1.35rem 0;
+  max-width: 620px;
+}
+
+.maly-hero-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: rgba(43, 43, 43, 0.04);
+  border: 1.5px solid rgba(43, 43, 43, 0.16);
+  border-radius: 8px;
+  padding: 0.95rem 1.25rem;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme-mode="dark"] .maly-hero-specs {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.maly-spec-item {
+  display: flex;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.maly-spec-label {
+  font-weight: 800;
+  color: var(--maly-ink);
+  min-width: 105px;
+  letter-spacing: 0.02em;
+}
+
+.maly-spec-val {
+  color: var(--maly-ink-muted);
+}
+
+/* Right Column: Illustration & Floating Badges (5-Star Layout) */
+.maly-hero-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 3.5rem 6.5rem;
+}
+
+.maly-portrait-wrapper {
+  position: relative;
+  max-width: 345px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.maly-portrait-img {
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  border: 3.5px solid var(--maly-ink);
+  box-shadow: 8px 8px 0px var(--maly-ink);
+}
+
+/* 5 Distinct, Slow & Organic Floating Drift Animations for 5 Star Points */
+@keyframes starFloatApex {
+  0% {
+    transform: translateX(-50%) translateY(0px);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+}
+
+@keyframes starFloatUpperLeft {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-4px, -3px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes starFloatUpperRight {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(4px, -3px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes starFloatLowerLeft {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-3px, 4px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes starFloatLowerRight {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(3px, 4px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.maly-floating-badge {
+  position: absolute;
+  background: var(--maly-paper);
+  border: 2px solid var(--maly-ink);
+  padding: 0.42rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  box-shadow: 3.5px 3.5px 0px var(--maly-ink);
+  color: var(--maly-ink);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 5-Pointed Star Formation Around the Portrait */
+/* Star Point 1: Apex (Top Center) */
+.maly-floating-badge.star-point-top {
+  top: -35px;
+  left: 35%;
+  transform: translateX(-50%);
+  background: #f6fbf4;
+  animation: starFloatApex 7.2s ease-in-out infinite;
+}
+
+/* Star Point 2: Upper-Left Arm (~10 o'clock) */
+.maly-floating-badge.star-point-upper-left {
+  top: 35%;
+  left: -120px;
+  background: #f0f7ff;
+  animation: starFloatUpperLeft 8.4s ease-in-out infinite;
+}
+
+/* Star Point 3: Upper-Right Arm (~2 o'clock) */
+.maly-floating-badge.star-point-upper-right {
+  top: 24%;
+  right: -90px;
+  background: #fdf2f7;
+  animation: starFloatUpperRight 8.6s ease-in-out infinite;
+}
+
+/* Star Point 4: Lower-Left Foot (~7:30 o'clock) */
+.maly-floating-badge.star-point-lower-left {
+  bottom: -40px;
+  left: -40px;
+  background: #fff8e7;
+  animation: starFloatLowerLeft 7.8s ease-in-out infinite;
+}
+
+/* Star Point 5: Lower-Right Foot (~4:30 o'clock) */
+.maly-floating-badge.star-point-lower-right {
+  bottom: -10px;
+  right: -75px;
+  background: #eefcf8;
+  animation: starFloatLowerRight 7.5s ease-in-out infinite;
+}
+
+[data-theme-mode="dark"] .maly-floating-badge {
+  background: #1e1e1a !important;
+  color: #f4efe4 !important;
+  border-color: #48483e !important;
+  box-shadow: 3.5px 3.5px 0px #000000 !important;
+}
+
+.maly-action-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.maly-btn-ink {
+  background: var(--maly-ink);
+  color: var(--maly-paper);
+  padding: 0.68rem 1.25rem;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 2px solid var(--maly-ink);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.maly-btn-ink:hover {
+  background: var(--maly-blue);
+  border-color: var(--maly-blue);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--maly-ink);
+}
+
+.maly-btn-outline {
+  background: transparent;
+  color: var(--maly-ink);
+  padding: 0.68rem 1.25rem;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 2px solid var(--maly-ink);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.maly-btn-outline:hover {
+  background: var(--maly-yellow);
+  color: #000000;
+  box-shadow: 4px 4px 0px var(--maly-ink);
+}
+
+/* Editorial Story Chapters */
+.maly-chapter-section {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 3rem;
+}
+
+.maly-chapter-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid var(--maly-ink);
+  padding-bottom: 1rem;
+}
+
+.maly-part-badge {
+  font-family: var(--maly-serif);
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--maly-blue);
+}
+
+.maly-chapter-title {
+  font-family: var(--maly-serif);
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.maly-chapter-desc {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--maly-ink-muted);
+  max-width: 400px;
+  text-align: right;
+}
+
+/* Part 01: The Architect Grid */
+.maly-bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: var(--maly-paper);
+  border: 2px solid var(--maly-ink);
+  padding: 3rem;
+  box-shadow: 8px 8px 0px var(--maly-ink);
+}
+
+.maly-bio-content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  color: var(--maly-ink);
+}
+
+.maly-quote-box {
+  background: var(--maly-bg-subtle);
+  border-left: 4px solid var(--maly-blue);
+  padding: 1.25rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.maly-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.maly-stat-card {
+  border: 2px solid var(--maly-ink);
+  padding: 1.5rem;
+  background: var(--maly-bg);
+  position: relative;
+}
+
+.maly-stat-num {
+  font-family: var(--maly-serif);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--maly-ink);
+  line-height: 1;
+}
+
+.maly-stat-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.5rem;
+  color: var(--maly-blue);
+}
+
+.maly-stat-detail {
+  font-size: 0.75rem;
+  color: var(--maly-ink-muted);
+  margin-top: 0.35rem;
+}
+
+/* Part 02: High-Stakes Banking Dossiers */
+.maly-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+}
+
+.maly-project-card {
+  background: var(--maly-paper);
+  border: 2px solid var(--maly-ink);
+  padding: 2.25rem;
+  box-shadow: 8px 8px 0px var(--maly-ink);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.maly-project-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 12px 12px 0px var(--maly-blue);
+}
+
+.maly-card-part-num {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: var(--maly-serif);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--maly-border);
+}
+
+.maly-project-client {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--maly-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.maly-project-title {
+  font-family: var(--maly-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  color: var(--maly-ink);
+}
+
+.maly-project-metrics {
+  display: inline-block;
+  background: var(--maly-yellow);
+  color: #000000;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid var(--maly-ink);
+  margin-bottom: 1rem;
+}
+
+.maly-project-tagline {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--maly-ink-muted);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.maly-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.maly-tag {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--maly-bg-subtle);
+  border: 1px solid var(--maly-ink);
+  color: var(--maly-ink);
+}
+
+.maly-card-action {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--maly-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Part 03: Security Manuscript */
+.maly-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.maly-skill-cluster {
+  background: var(--maly-paper);
+  border: 2px solid var(--maly-ink);
+  padding: 2rem;
+  box-shadow: 6px 6px 0px var(--maly-ink);
+}
+
+.maly-cluster-title {
+  font-family: var(--maly-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--maly-ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.maly-skill-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.maly-skill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.maly-skill-name {
+  font-weight: 700;
+}
+
+.maly-skill-years {
+  font-size: 0.75rem;
+  color: var(--maly-ink-muted);
+}
+
+/* Part 04: The Chronicle */
+.maly-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.maly-timeline-item {
+  background: var(--maly-paper);
+  border: 2px solid var(--maly-ink);
+  padding: 2.25rem;
+  box-shadow: 8px 8px 0px var(--maly-ink);
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+}
+
+.maly-timeline-meta {
+  border-right: 2px solid var(--maly-border);
+  padding-right: 1.5rem;
+}
+
+.maly-timeline-date {
+  font-family: var(--maly-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--maly-blue);
+}
+
+.maly-timeline-loc {
+  font-size: 0.8rem;
+  color: var(--maly-ink-muted);
+  margin-top: 0.35rem;
+}
+
+.maly-timeline-body h4 {
+  font-family: var(--maly-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.maly-timeline-body h5 {
+  font-size: 0.9rem;
+  color: var(--maly-blue);
+  margin-bottom: 1rem;
+}
+
+.maly-timeline-body p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--maly-ink-muted);
+}
+
+/* Part 05: Colophon & Dialogue */
+.maly-contact-spread {
+  background: var(--maly-paper);
+  border: 2px solid var(--maly-ink);
+  padding: 3.5rem;
+  box-shadow: 12px 12px 0px var(--maly-ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+}
+
+.maly-contact-info h3 {
+  font-family: var(--maly-serif);
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.maly-contact-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.maly-contact-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--maly-bg);
+  border: 2px solid var(--maly-ink);
+  text-decoration: none;
+  color: var(--maly-ink);
+  font-weight: 700;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.maly-contact-pill:hover {
+  background: var(--maly-blue);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.maly-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.maly-form-group label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.maly-input,
+.maly-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--maly-bg);
+  border: 2px solid var(--maly-ink);
+  font-family: var(--maly-sans);
+  font-size: 0.88rem;
+  color: var(--maly-ink);
+}
+
+.maly-input:focus,
+.maly-textarea:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--maly-blue);
+}
+
+[data-theme-mode="dark"] .maly-input:focus,
+[data-theme-mode="dark"] .maly-textarea:focus {
+  background: #1c1c18;
+  border-color: var(--maly-blue);
+}
+
+.maly-contact-form-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+
+  .maly-hero-grid,
+  .maly-bio-grid,
+  .maly-timeline-item,
+  .maly-contact-spread {
+    grid-template-columns: 1fr;
+  }
+
+  .maly-hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .maly-hero-eyebrow {
+    justify-content: center;
+  }
+
+  .maly-action-row {
+    justify-content: center;
+  }
+
+  .maly-vertical-spine {
+    display: none;
+  }
+
+  .maly-chapter-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .maly-chapter-desc {
+    text-align: left;
+  }
+
+  .maly-masthead {
+    padding: 1rem 1.5rem;
+  }
+
+  .maly-hero-spread,
+  .maly-chapter-section {
+    padding: 1.5rem;
+  }
+
+  .maly-hero-title,
+  .maly-display-title {
+    font-size: 2.2rem;
+  }
+}

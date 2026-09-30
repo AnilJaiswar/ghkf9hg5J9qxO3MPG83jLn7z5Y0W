@@ -1,0 +1,473 @@
+/* ==========================================================================
+   THEME E: SWISS ARCHITECTURAL — MINIMALIST MONOGRAPH & GRID
+   Supports BOTH Light Mode (Stark Monochrome) and Dark Mode (Inverted Blueprint)
+   ========================================================================== */
+
+.theme-e-container {
+  --swiss-bg: #ffffff;
+  --swiss-black: #000000;
+  --swiss-gray-light: #f7f7f8;
+  --swiss-mint-tint: #d8ede3;
+  --swiss-mint-accent: #bfe0d1;
+  --swiss-border: #000000;
+  --swiss-border-light: #e0e0e0;
+  --swiss-text-dark: #000000;
+  --swiss-text-muted: #555555;
+  --swiss-font-sans: 'Space Grotesk', 'DM Sans', Helvetica, Arial, sans-serif;
+  --swiss-font-mono: 'IBM Plex Mono', 'Space Mono', monospace;
+
+  background-color: var(--swiss-bg);
+  color: var(--swiss-text-dark);
+  font-family: var(--swiss-font-sans);
+  min-height: 100vh;
+  padding-bottom: 7rem;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Overrides for Theme E */
+[data-theme-mode="dark"] .theme-e-container,
+.theme-e-container[data-mode="dark"] {
+  --swiss-bg: #0a0a0c;
+  --swiss-black: #ffffff;
+  --swiss-gray-light: #141418;
+  --swiss-mint-tint: #182820;
+  --swiss-mint-accent: #263e32;
+  --swiss-border: rgba(255, 255, 255, 0.2);
+  --swiss-border-light: rgba(255, 255, 255, 0.1);
+  --swiss-text-dark: #ffffff;
+  --swiss-text-muted: #9e9ea6;
+}
+
+[data-theme-mode="dark"] .swiss-top-rail {
+  background: #0a0a0c;
+}
+
+[data-theme-mode="dark"] .swiss-index-code {
+  background: #182820;
+  color: #a3e5c9;
+  border: 1px solid rgba(163, 229, 201, 0.3);
+}
+
+[data-theme-mode="dark"] .swiss-hero-right {
+  background: #121216;
+}
+
+[data-theme-mode="dark"] .swiss-photo-container {
+  background: #18181f;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme-mode="dark"] .swiss-mint-overlay-box {
+  background: #182820;
+  border-color: rgba(163, 229, 201, 0.4);
+}
+
+[data-theme-mode="dark"] .swiss-mint-title {
+  color: #a3e5c9;
+}
+
+[data-theme-mode="dark"] .swiss-blueprint-item:hover {
+  background: #15221b;
+}
+
+[data-theme-mode="dark"] .swiss-btn-dispatch {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+[data-theme-mode="dark"] .swiss-btn-dispatch:hover {
+  background: #a3e5c9;
+  color: #000000;
+  border-color: #a3e5c9;
+}
+
+[data-theme-mode="dark"] .swiss-input,
+[data-theme-mode="dark"] .swiss-textarea {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+[data-theme-mode="dark"] .swiss-input:focus,
+[data-theme-mode="dark"] .swiss-textarea:focus {
+  border-bottom-color: #a3e5c9;
+}
+
+/* Monograph Top Index Rail */
+.swiss-top-rail {
+  border-bottom: 1px solid var(--swiss-border);
+  padding: 1.5rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.swiss-brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.swiss-logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--swiss-black);
+}
+
+.swiss-index-code {
+  font-family: var(--swiss-font-mono);
+  font-size: 0.75rem;
+  background: var(--swiss-mint-tint);
+  padding: 0.2rem 0.5rem;
+  color: var(--swiss-black);
+}
+
+.swiss-nav-coords {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-family: var(--swiss-font-mono);
+  font-size: 0.8rem;
+}
+
+.swiss-nav-item a {
+  text-decoration: none;
+  color: var(--swiss-black);
+  transition: opacity 0.2s ease;
+}
+
+.swiss-nav-item a:hover {
+  opacity: 0.5;
+}
+
+/* Master Architectural Hero Spread */
+.swiss-hero-spread {
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--swiss-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.swiss-hero-left {
+  padding: 4rem 3.5rem;
+  border-right: 1px solid var(--swiss-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.swiss-dossier-tag {
+  font-family: var(--swiss-font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--swiss-text-muted);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.swiss-display-headline {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.swiss-lead-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--swiss-text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+}
+
+/* Architectural Specs Table */
+.swiss-specs-table {
+  border-top: 1px solid var(--swiss-border);
+  width: 100%;
+  font-family: var(--swiss-font-mono);
+  font-size: 0.8rem;
+}
+
+.swiss-spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--swiss-border-light);
+}
+
+.swiss-spec-label {
+  color: var(--swiss-text-muted);
+  text-transform: uppercase;
+}
+
+.swiss-spec-value {
+  font-weight: 700;
+  color: var(--swiss-black);
+}
+
+/* Hero Right: Architectural Photo Block */
+.swiss-hero-right {
+  position: relative;
+  background: var(--swiss-gray-light);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.swiss-photo-container {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--swiss-border);
+  background: #ffffff;
+}
+
+.swiss-architecture-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%) contrast(110%);
+}
+
+.swiss-mint-overlay-box {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--swiss-mint-tint);
+  border: 1px solid var(--swiss-border);
+  padding: 1.5rem;
+  width: 220px;
+}
+
+.swiss-mint-title {
+  font-family: var(--swiss-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.swiss-mint-desc {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--swiss-text-muted);
+}
+
+/* Swiss Section Structure */
+.swiss-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--swiss-border);
+}
+
+.swiss-section-header {
+  padding: 2.5rem 3.5rem;
+  border-bottom: 1px solid var(--swiss-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background: var(--swiss-gray-light);
+}
+
+.swiss-section-number {
+  font-family: var(--swiss-font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--swiss-black);
+}
+
+.swiss-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.swiss-section-meta {
+  font-family: var(--swiss-font-mono);
+  font-size: 0.75rem;
+  color: var(--swiss-text-muted);
+}
+
+/* Blueprint Project Specifications */
+.swiss-projects-blueprint {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.swiss-blueprint-item {
+  border-bottom: 1px solid var(--swiss-border);
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.swiss-blueprint-item:nth-child(odd) {
+  border-right: 1px solid var(--swiss-border);
+}
+
+.swiss-blueprint-item:hover {
+  background: var(--swiss-mint-tint);
+}
+
+.swiss-blueprint-ref {
+  font-family: var(--swiss-font-mono);
+  font-size: 0.75rem;
+  color: var(--swiss-text-muted);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.swiss-blueprint-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--swiss-black);
+}
+
+.swiss-blueprint-client {
+  font-family: var(--swiss-font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--swiss-black);
+  margin-bottom: 1.25rem;
+}
+
+.swiss-blueprint-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--swiss-text-muted);
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.swiss-blueprint-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--swiss-border);
+  padding-top: 1rem;
+  font-family: var(--swiss-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Architectural Capability Taxonomy */
+.swiss-skills-taxonomy {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.swiss-tax-col {
+  border-right: 1px solid var(--swiss-border);
+  padding: 2.5rem;
+}
+
+.swiss-tax-col:last-child {
+  border-right: none;
+}
+
+.swiss-tax-header {
+  font-family: var(--swiss-font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--swiss-border);
+}
+
+.swiss-tax-list {
+  list-style: none;
+  font-family: var(--swiss-font-mono);
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Architectural Contact Dispatch */
+.swiss-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.swiss-contact-left {
+  padding: 4rem 3.5rem;
+  border-right: 1px solid var(--swiss-border);
+}
+
+.swiss-contact-right {
+  padding: 4rem 3.5rem;
+}
+
+.swiss-input, .swiss-textarea {
+  width: 100%;
+  padding: 0.85rem 0;
+  border: none;
+  border-bottom: 1px solid var(--swiss-border);
+  font-family: var(--swiss-font-mono);
+  font-size: 0.9rem;
+  color: var(--swiss-black);
+  margin-bottom: 2rem;
+  border-radius: 0;
+  background: transparent;
+}
+
+.swiss-input:focus, .swiss-textarea:focus {
+  outline: none;
+  border-bottom: 2px solid var(--swiss-black);
+}
+
+.swiss-btn-dispatch {
+  background: var(--swiss-black);
+  color: #ffffff;
+  padding: 1rem 2.5rem;
+  font-family: var(--swiss-font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid var(--swiss-black);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.swiss-btn-dispatch:hover {
+  background: var(--swiss-mint-tint);
+  color: var(--swiss-black);
+}
+
+@media (max-width: 1024px) {
+  .swiss-hero-spread, .swiss-projects-blueprint, .swiss-contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .swiss-skills-taxonomy {
+    grid-template-columns: 1fr 1fr;
+  }
+  .swiss-nav-coords {
+    display: none;
+  }
+  .swiss-hero-left, .swiss-blueprint-item, .swiss-contact-left, .swiss-contact-right, .swiss-section-header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .swiss-display-headline {
+    font-size: 2.75rem;
+  }
+}
