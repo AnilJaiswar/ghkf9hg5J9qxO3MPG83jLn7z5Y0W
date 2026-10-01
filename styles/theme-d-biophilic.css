@@ -322,6 +322,12 @@
   border-color: #25392b;
 }
 
+.bio-hero-illustration picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .bio-hero-illustration img {
   width: 100%;
   height: 100%;

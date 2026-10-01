@@ -325,7 +325,7 @@ export const portfolioData = {
       label: "Storybook",
       concept: "Editorial Illustrated Journal",
       description: "Warm papyrus palette, chapter spreads, hand-drawn annotations & literary editorial typography.",
-      reference: "theme_a.jpg",
+      reference: "theme_a.webp",
       badgeColor: "#1e56a0",
       key: "1"
     },
@@ -335,7 +335,7 @@ export const portfolioData = {
       label: "Biophilic",
       concept: "Warm Human-Centric Story",
       description: "Earthy sage & olive tones, layered wavy SVG curves, gentle speech bubbles & friendly icons.",
-      reference: "theme_d.jpg",
+      reference: "theme_d.webp",
       badgeColor: "#769f72",
       key: "2"
     },
@@ -345,7 +345,7 @@ export const portfolioData = {
       label: "Swiss",
       concept: "Rigid Swiss Grid & System Dossier",
       description: "Stark monochrome, mint tint blocks, 1px blueprint rules, monospace index & architectural specs.",
-      reference: "theme_e.jpg",
+      reference: "theme_e.webp",
       badgeColor: "#ffffff",
       key: "3"
     }

@@ -14,17 +14,22 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aniljaiswar.com">
 
-  <!-- Google Fonts for all 5 Independent Themes -->
+  <!-- Preload Critical Above-The-Fold Assets -->
+  <link rel="preload" as="image" href="assets/images/theme_a_portrait.webp" type="image/webp">
+
+  <!-- Streamlined Google Fonts for Active Themes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Base & Theme Switcher Styles -->
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/theme-switcher.css">
 
-  <!-- Dynamic Theme Stylesheet (swapped on theme transition) -->
-  <link id="active-theme-stylesheet" rel="stylesheet" href="styles/theme-a-maly.css">
+  <!-- Independent Theme Stylesheets (Pre-parsed & Scoped for Zero-FOUC Instant Transitions) -->
+  <link id="theme-a-stylesheet" rel="stylesheet" href="styles/theme-a-maly.css">
+  <link id="theme-d-stylesheet" rel="stylesheet" href="styles/theme-d-biophilic.css">
+  <link id="theme-e-stylesheet" rel="stylesheet" href="styles/theme-e-swiss.css">
 
   <style>
     /* Print Stylesheet for Instant CV Export */
@@ -48,8 +53,14 @@
 </head>
 <body data-theme-mode="light">
 
-  <!-- Screen Curtain for Smooth Theme Switching Transitions -->
-  <div id="theme-curtain" class="theme-switch-curtain"></div>
+  <!-- Screen Curtain & Loading Transition Overlay -->
+  <div id="theme-curtain" class="theme-switch-curtain" aria-hidden="true" role="status">
+    <div class="curtain-loader-card">
+      <div class="curtain-spinner-ring" id="curtain-spinner"></div>
+      <div class="curtain-theme-title" id="curtain-theme-title">Switching Theme...</div>
+      <div class="curtain-theme-desc" id="curtain-theme-desc">Preparing portfolio layout...</div>
+    </div>
+  </div>
 
   <!-- Dynamic Theme Root (Mounted by dedicated Theme Renderers) -->
   <div id="theme-app-root">

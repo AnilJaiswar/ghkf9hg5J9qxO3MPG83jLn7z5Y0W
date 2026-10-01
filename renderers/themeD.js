@@ -70,7 +70,10 @@ export function renderThemeD(data, container, utils) {
 
             <div class="bio-hero-illustration-wrapper">
               <div class="bio-hero-illustration">
-                <img src="assets/images/theme_d_landscape.jpg" alt="Illustrated portrait of Anilkumar Jaiswar developing mobile apps">
+                <img src="assets/images/theme_d_landscape.webp" 
+                     alt="Illustrated portrait of Anilkumar Jaiswar developing mobile apps"
+                     loading="lazy"
+                     decoding="async">
               </div>
             </div>
           </div>

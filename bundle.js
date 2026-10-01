@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 // STANDALONE APPLICATION BUNDLE FOR ANILKUMAR R. JAISWAR PORTFOLIO
 // Compatible with both file:/// (local double-click) and http:// (web server)
 // 100% Genuine User Content â€¢ 3 Active Themes â€¢ Compact Top-Right Hub
@@ -334,7 +334,7 @@ const portfolioData = {
       label: "Storybook",
       concept: "Editorial Illustrated Journal",
       description: "Warm papyrus palette, chapter spreads, hand-drawn annotations & literary editorial typography.",
-      reference: "theme_a.jpg",
+      reference: "theme_a.webp",
       badgeColor: "#1e56a0",
       key: "1"
     },
@@ -344,7 +344,7 @@ const portfolioData = {
       label: "Biophilic",
       concept: "Warm Human-Centric Story",
       description: "Earthy sage & olive tones, layered wavy SVG curves, gentle speech bubbles & friendly icons.",
-      reference: "theme_d.jpg",
+      reference: "theme_d.webp",
       badgeColor: "#769f72",
       key: "2"
     },
@@ -354,7 +354,7 @@ const portfolioData = {
       label: "Swiss",
       concept: "Rigid Swiss Grid & System Dossier",
       description: "Stark monochrome, mint tint blocks, 1px blueprint rules, monospace index & architectural specs.",
-      reference: "theme_e.jpg",
+      reference: "theme_e.webp",
       badgeColor: "#ffffff",
       key: "3"
     }
@@ -478,7 +478,7 @@ const portfolioData = {
     if (!backdrop || !content) return;
 
     // Apply active theme class to modal so it follows current theme style
-    backdrop.classList.remove('modal-theme-a', 'modal-theme-b', 'modal-theme-c', 'modal-theme-d', 'modal-theme-e');
+    backdrop.classList.remove('modal-theme-a', 'modal-theme-d', 'modal-theme-e');
     backdrop.classList.add(`modal-${activeThemeId}`);
 
     content.innerHTML = `
@@ -644,7 +644,11 @@ function renderThemeA(data, container, utils) {
               <!-- Right Column: Illustrated Portrait with 5 Floating Badges in Star Formation -->
               <div class="maly-hero-media">
                 <div class="maly-portrait-wrapper">
-                  <img src="assets/images/theme_a_portrait.jpg" alt="Illustrated Portrait of Anilkumar Jaiswar" class="maly-portrait-img">
+                  <img src="assets/images/theme_a_portrait.webp" 
+                       alt="Illustrated Portrait of Anilkumar Jaiswar" 
+                       class="maly-portrait-img"
+                       fetchpriority="high"
+                       decoding="async">
                   <!-- 5 Floating Badges in Star-Like Adjustment Around Image -->
                   <div class="maly-floating-badge star-point-top">🛡️ VAPT & Security</div>
                   <div class="maly-floating-badge star-point-upper-left">⚡ 8+ Years Exp</div>
@@ -951,7 +955,10 @@ function renderThemeD(data, container, utils) {
 
             <div class="bio-hero-illustration-wrapper">
               <div class="bio-hero-illustration">
-                <img src="assets/images/theme_d_landscape.jpg" alt="Illustrated portrait of Anilkumar Jaiswar developing mobile apps">
+                <img src="assets/images/theme_d_landscape.webp" 
+                     alt="Illustrated portrait of Anilkumar Jaiswar developing mobile apps"
+                     loading="lazy"
+                     decoding="async">
               </div>
             </div>
           </div>
@@ -1302,7 +1309,11 @@ function renderThemeE(data, container, utils) {
           <!-- Hero Right: Photo with Sage Tint Block -->
           <div class="swiss-hero-right">
             <div class="swiss-photo-container">
-              <img src="assets/images/theme_e_architecture.jpg" alt="Minimalist Architectural Facade" class="swiss-architecture-img">
+              <img src="assets/images/theme_e_architecture.webp" 
+                   alt="Minimalist Architectural Facade" 
+                   class="swiss-architecture-img"
+                   loading="lazy"
+                   decoding="async">
               
               <div class="swiss-mint-overlay-box">
                 <div class="swiss-mint-title">TECHNICAL FOUNDATIONS</div>
@@ -1515,55 +1526,93 @@ function renderThemeE(data, container, utils) {
   };
 
   // 7. THEME & MODE SWITCHING ENGINE
-  function switchTheme(newThemeId) {
+  let isSwitchingTheme = false;
+
+  function updateThemeUI(themeId) {
+    const activeThemeObj = portfolioData.themes.find(t => t.id === themeId);
+    const labelEl = document.getElementById('theme-active-label');
+    const dotEl = document.getElementById('theme-active-dot');
+    if (labelEl && activeThemeObj) {
+      labelEl.textContent = activeThemeObj.label;
+    }
+    if (dotEl && activeThemeObj) {
+      dotEl.style.background = activeThemeObj.color;
+    }
+
+    // Update dropdown selection states
+    document.querySelectorAll('.theme-menu-item').forEach(item => {
+      const isCurrent = item.getAttribute('data-theme') === themeId;
+      item.classList.toggle('is-selected', isCurrent);
+    });
+
+    // Close menu if open
+    const hub = document.getElementById('theme-compact-hub');
+    if (hub) hub.classList.remove('menu-open');
+  }
+
+  function switchTheme(newThemeId, isInitial = false) {
     if (!renderers[newThemeId]) return;
+    if (!isInitial && (newThemeId === activeThemeId || isSwitchingTheme)) return;
 
     const curtain = document.getElementById('theme-curtain');
     const appContainer = document.getElementById('theme-app-root');
-    const activeStyleLink = document.getElementById('active-theme-stylesheet');
+    const activeThemeObj = portfolioData.themes.find(t => t.id === newThemeId);
 
+    // Initial mount: render immediately without curtain
+    if (isInitial) {
+      appContainer.innerHTML = '';
+      const renderer = renderers[newThemeId];
+      renderer(portfolioData, appContainer, window.appUtils);
+      updateThemeUI(newThemeId);
+      return;
+    }
+
+    isSwitchingTheme = true;
+
+    // Update loader text & theme accent color
+    const titleEl = document.getElementById('curtain-theme-title');
+    const descEl = document.getElementById('curtain-theme-desc');
+    const spinnerEl = document.getElementById('curtain-spinner');
+    if (titleEl && activeThemeObj) {
+      titleEl.textContent = `Loading ${activeThemeObj.label}...`;
+    }
+    if (descEl && activeThemeObj) {
+      descEl.textContent = `${activeThemeObj.name} Spread`;
+    }
+    if (spinnerEl && activeThemeObj) {
+      spinnerEl.style.borderTopColor = activeThemeObj.color;
+    }
+
+    // Hide text/html content immediately and display loading curtain
+    if (appContainer) appContainer.classList.add('is-switching');
     if (curtain) curtain.classList.add('is-active');
 
     setTimeout(() => {
-      if (activeStyleLink) {
-        activeStyleLink.href = stylesheets[newThemeId];
-      }
-
+      // Clear and render new theme into the hidden container
       appContainer.innerHTML = '';
       const renderer = renderers[newThemeId];
       renderer(portfolioData, appContainer, window.appUtils);
 
-      // Update compact widget label & active indicator
-      const activeThemeObj = portfolioData.themes.find(t => t.id === newThemeId);
-      const labelEl = document.getElementById('theme-active-label');
-      const dotEl = document.getElementById('theme-active-dot');
-      if (labelEl && activeThemeObj) {
-        labelEl.textContent = activeThemeObj.label;
-      }
-      if (dotEl && activeThemeObj) {
-        dotEl.style.background = activeThemeObj.color;
-      }
-
-      // Update dropdown selection states
-      document.querySelectorAll('.theme-menu-item').forEach(item => {
-        const isCurrent = item.getAttribute('data-theme') === newThemeId;
-        item.classList.toggle('is-selected', isCurrent);
-      });
-
+      updateThemeUI(newThemeId);
       activeThemeId = newThemeId;
       localStorage.setItem('anil_portfolio_theme', newThemeId);
-
-      // Close menu if open
-      const hub = document.getElementById('theme-compact-hub');
-      if (hub) hub.classList.remove('menu-open');
 
       playSound('switch');
       window.scrollTo({ top: 0, behavior: 'instant' });
 
-      setTimeout(() => {
-        if (curtain) curtain.classList.remove('is-active');
-      }, 140);
-    }, 120);
+      // Guarantee browser computes styles and paints before lifting curtain
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            if (appContainer) appContainer.classList.remove('is-switching');
+            if (curtain) curtain.classList.remove('is-active');
+            setTimeout(() => {
+              isSwitchingTheme = false;
+            }, 180);
+          }, 90);
+        });
+      });
+    }, 130);
   }
 
   function toggleThemeMode() {
@@ -1679,7 +1728,7 @@ function renderThemeE(data, container, utils) {
     });
 
     // Initial Mount
-    switchTheme(activeThemeId);
+    switchTheme(activeThemeId, true);
 
     if (paramModal) {
       const targetProj = portfolioData.projects.find(p => p.id === paramModal);

@@ -31,6 +31,15 @@ body {
   position: relative;
 }
 
+picture {
+  display: contents;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Screen reader accessible */
 .sr-only {
   position: absolute;
@@ -668,18 +677,113 @@ body {
 }
 
 /* ==========================================================================
-   THEME SWITCHING TRANSITION OVERLAY
+   THEME SWITCHING TRANSITION OVERLAY & LOADER
    ========================================================================== */
+#theme-app-root {
+  transition: opacity 0.15s ease-out;
+}
+
+#theme-app-root.is-switching {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .theme-switch-curtain {
   position: fixed;
   inset: 0;
-  background: #0b0f19;
+  background: #0d1117;
   z-index: 99980;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.25s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .theme-switch-curtain.is-active {
-  opacity: 0.9;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+[data-theme-mode="light"] .theme-switch-curtain {
+  background: rgba(250, 248, 245, 0.98);
+}
+
+[data-theme-mode="dark"] .theme-switch-curtain {
+  background: rgba(15, 17, 23, 0.98);
+}
+
+.curtain-loader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.2rem 2.8rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: curtainCardPulse 2s ease-in-out infinite;
+}
+
+[data-theme-mode="light"] .curtain-loader-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+}
+
+.curtain-spinner-ring {
+  width: 44px;
+  height: 44px;
+  border: 3.5px solid rgba(30, 96, 213, 0.2);
+  border-top-color: #1e60d5;
+  border-radius: 50%;
+  animation: curtainSpin 0.75s linear infinite;
+  margin-bottom: 1.15rem;
+}
+
+.curtain-theme-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3rem;
+}
+
+[data-theme-mode="light"] .curtain-theme-title {
+  color: #1a1a18;
+}
+
+.curtain-theme-desc {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  letter-spacing: 0.01em;
+}
+
+[data-theme-mode="light"] .curtain-theme-desc {
+  color: #64748b;
+}
+
+@keyframes curtainSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes curtainCardPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
 }

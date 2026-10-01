@@ -132,7 +132,7 @@ function openProjectModal(project) {
   if (!backdrop || !content) return;
 
   // Apply active theme class to modal so it follows the current theme styling
-  backdrop.classList.remove('modal-theme-a', 'modal-theme-b', 'modal-theme-c', 'modal-theme-d', 'modal-theme-e');
+  backdrop.classList.remove('modal-theme-a', 'modal-theme-d', 'modal-theme-e');
   backdrop.classList.add(`modal-${activeThemeId}`);
 
   content.innerHTML = `
@@ -233,55 +233,67 @@ const appUtils = {
 window.appUtils = appUtils;
 
 // Theme Switcher Switch Function
-function switchTheme(newThemeId) {
+let isSwitchingTheme = false;
+
+function switchTheme(newThemeId, isInitial = false) {
   if (!themeRenderers[newThemeId]) return;
+  if (!isInitial && (newThemeId === activeThemeId || isSwitchingTheme)) return;
 
   const curtain = document.getElementById('theme-curtain');
   const appContainer = document.getElementById('theme-app-root');
-  const activeStyleLink = document.getElementById('active-theme-stylesheet');
+  const activeThemeObj = portfolioData.themes.find(t => t.id === newThemeId);
 
-  // Activate transition curtain
+  // Initial mount: render immediately
+  if (isInitial) {
+    appContainer.innerHTML = '';
+    const renderer = themeRenderers[newThemeId];
+    renderer(portfolioData, appContainer, appUtils);
+    return;
+  }
+
+  isSwitchingTheme = true;
+
+  // Update loader text & spinner color
+  const titleEl = document.getElementById('curtain-theme-title');
+  const descEl = document.getElementById('curtain-theme-desc');
+  const spinnerEl = document.getElementById('curtain-spinner');
+  if (titleEl && activeThemeObj) {
+    titleEl.textContent = `Loading ${activeThemeObj.label}...`;
+  }
+  if (descEl && activeThemeObj) {
+    descEl.textContent = `${activeThemeObj.name} Spread`;
+  }
+  if (spinnerEl && activeThemeObj) {
+    spinnerEl.style.borderTopColor = activeThemeObj.color;
+  }
+
+  // Instantly hide content and show loading curtain
+  if (appContainer) appContainer.classList.add('is-switching');
   if (curtain) curtain.classList.add('is-active');
 
   setTimeout(() => {
-    // Update theme stylesheet
-    if (activeStyleLink) {
-      activeStyleLink.href = themeStylesheets[newThemeId];
-    }
-
-    // Render new theme
     appContainer.innerHTML = '';
     const renderer = themeRenderers[newThemeId];
     renderer(portfolioData, appContainer, appUtils);
 
-    // Update active HUD button state
-    document.querySelectorAll('.theme-pill-btn').forEach(btn => {
-      const btnTheme = btn.getAttribute('data-theme');
-      btn.classList.toggle('is-active', btnTheme === newThemeId);
-    });
-
-    // Update concept badge text
-    const activeThemeObj = portfolioData.themes.find(t => t.id === newThemeId);
-    const conceptBadge = document.getElementById('theme-concept-text');
-    if (conceptBadge && activeThemeObj) {
-      conceptBadge.innerHTML = `<span class="concept-title">${activeThemeObj.name}</span> — ${activeThemeObj.concept}`;
-    }
-
-    // Save preference
     activeThemeId = newThemeId;
     localStorage.setItem('anil_portfolio_theme', newThemeId);
 
-    // Play switch sound
     playSynthesizedSound('switch');
-
-    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // Deactivate curtain
-    setTimeout(() => {
-      if (curtain) curtain.classList.remove('is-active');
-    }, 150);
-  }, 150);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          if (appContainer) appContainer.classList.remove('is-switching');
+          if (curtain) curtain.classList.remove('is-active');
+          setTimeout(() => {
+            isSwitchingTheme = false;
+          }, 180);
+        }, 90);
+      });
+    });
+  }, 130);
 }
 
 // Initialize Application
@@ -345,5 +357,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initial Mount
-  switchTheme(activeThemeId);
+  switchTheme(activeThemeId, true);
 });

@@ -81,7 +81,11 @@ export function renderThemeE(data, container, utils) {
           <!-- Hero Right: Photo with Sage Tint Block -->
           <div class="swiss-hero-right">
             <div class="swiss-photo-container">
-              <img src="assets/images/theme_e_architecture.jpg" alt="Minimalist Architectural Facade" class="swiss-architecture-img">
+              <img src="assets/images/theme_e_architecture.webp" 
+                   alt="Minimalist Architectural Facade" 
+                   class="swiss-architecture-img"
+                   loading="lazy"
+                   decoding="async">
               
               <div class="swiss-mint-overlay-box">
                 <div class="swiss-mint-title">TECHNICAL FOUNDATIONS</div>

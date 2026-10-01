@@ -66,7 +66,11 @@ export function renderThemeA(data, container, utils) {
               <!-- Right Column: Illustrated Portrait with 5 Floating Badges in Star Formation -->
               <div class="maly-hero-media">
                 <div class="maly-portrait-wrapper">
-                  <img src="assets/images/theme_a_portrait.jpg" alt="Illustrated Portrait of Anilkumar Jaiswar" class="maly-portrait-img">
+                  <img src="assets/images/theme_a_portrait.webp" 
+                       alt="Illustrated Portrait of Anilkumar Jaiswar" 
+                       class="maly-portrait-img"
+                       fetchpriority="high"
+                       decoding="async">
                   <!-- 5 Floating Badges in Star-Like Adjustment Around Image -->
                   <div class="maly-floating-badge star-point-top">🛡️ VAPT & Security</div>
                   <div class="maly-floating-badge star-point-upper-left">⚡ 8+ Years Exp</div>
