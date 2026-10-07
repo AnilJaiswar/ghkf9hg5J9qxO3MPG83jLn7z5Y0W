@@ -245,6 +245,27 @@ function switchTheme(newThemeId, isInitial = false) {
 
   // Initial mount: render immediately
   if (isInitial) {
+    if (newThemeId === 'theme-a' && appContainer && appContainer.querySelector('.theme-a-container')) {
+      const projects = portfolioData.projects;
+      const basics = portfolioData.basics;
+      appContainer.querySelectorAll('.maly-project-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const projId = card.getAttribute('data-project-id');
+          const project = projects.find(p => p.id === projId);
+          if (project && appUtils.openProjectModal) {
+            appUtils.playSound('click');
+            appUtils.openProjectModal(project);
+          }
+        });
+      });
+      const cvBtn = appContainer.querySelector('#maly-cv-btn');
+      if (cvBtn) cvBtn.addEventListener('click', () => { appUtils.playSound('pop'); appUtils.triggerDownloadCV(); });
+      const copyEmailBtn = appContainer.querySelector('#maly-copy-email');
+      if (copyEmailBtn) copyEmailBtn.addEventListener('click', () => { appUtils.copyToClipboard(basics.email, 'Email copied to clipboard!'); });
+      const copyPhoneBtn = appContainer.querySelector('#maly-copy-phone');
+      if (copyPhoneBtn) copyPhoneBtn.addEventListener('click', () => { appUtils.copyToClipboard(basics.phone, 'Phone number copied to clipboard!'); });
+      return;
+    }
     appContainer.innerHTML = '';
     const renderer = themeRenderers[newThemeId];
     renderer(portfolioData, appContainer, appUtils);

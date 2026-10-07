@@ -647,6 +647,8 @@ function renderThemeA(data, container, utils) {
                   <img src="assets/images/theme_a_portrait.webp" 
                        alt="Illustrated Portrait of Anilkumar Jaiswar" 
                        class="maly-portrait-img"
+                       width="640"
+                       height="640"
                        fetchpriority="high"
                        decoding="async">
                   <!-- 5 Floating Badges in Star-Like Adjustment Around Image -->
@@ -957,6 +959,8 @@ function renderThemeD(data, container, utils) {
               <div class="bio-hero-illustration">
                 <img src="assets/images/theme_d_landscape.webp" 
                      alt="Illustrated portrait of Anilkumar Jaiswar developing mobile apps"
+                     width="800"
+                     height="800"
                      loading="lazy"
                      decoding="async">
               </div>
@@ -1312,6 +1316,8 @@ function renderThemeE(data, container, utils) {
               <img src="assets/images/theme_e_architecture.webp" 
                    alt="Minimalist Architectural Facade" 
                    class="swiss-architecture-img"
+                   width="1000"
+                   height="746"
                    loading="lazy"
                    decoding="async">
               
@@ -1560,6 +1566,29 @@ function renderThemeE(data, container, utils) {
 
     // Initial mount: render immediately without curtain
     if (isInitial) {
+      if (newThemeId === 'theme-a' && appContainer && appContainer.querySelector('.theme-a-container')) {
+        // Fast hydration: Theme A is already rendered in static HTML for instant FCP/LCP!
+        const projects = portfolioData.projects;
+        const basics = portfolioData.basics;
+        appContainer.querySelectorAll('.maly-project-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const projId = card.getAttribute('data-project-id');
+            const project = projects.find(p => p.id === projId);
+            if (project && window.appUtils.openProjectModal) {
+              window.appUtils.playSound('click');
+              window.appUtils.openProjectModal(project);
+            }
+          });
+        });
+        const cvBtn = appContainer.querySelector('#maly-cv-btn');
+        if (cvBtn) cvBtn.addEventListener('click', () => { window.appUtils.playSound('pop'); window.appUtils.triggerDownloadCV(); });
+        const copyEmailBtn = appContainer.querySelector('#maly-copy-email');
+        if (copyEmailBtn) copyEmailBtn.addEventListener('click', () => { window.appUtils.copyToClipboard(basics.email, 'Email copied to clipboard!'); });
+        const copyPhoneBtn = appContainer.querySelector('#maly-copy-phone');
+        if (copyPhoneBtn) copyPhoneBtn.addEventListener('click', () => { window.appUtils.copyToClipboard(basics.phone, 'Phone number copied to clipboard!'); });
+        updateThemeUI(newThemeId);
+        return;
+      }
       appContainer.innerHTML = '';
       const renderer = renderers[newThemeId];
       renderer(portfolioData, appContainer, window.appUtils);

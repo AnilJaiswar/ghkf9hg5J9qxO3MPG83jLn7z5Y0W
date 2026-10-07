@@ -84,6 +84,8 @@ export function renderThemeE(data, container, utils) {
               <img src="assets/images/theme_e_architecture.webp" 
                    alt="Minimalist Architectural Facade" 
                    class="swiss-architecture-img"
+                   width="1000"
+                   height="746"
                    loading="lazy"
                    decoding="async">
               

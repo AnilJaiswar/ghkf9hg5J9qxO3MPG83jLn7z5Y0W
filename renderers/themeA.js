@@ -69,6 +69,8 @@ export function renderThemeA(data, container, utils) {
                   <img src="assets/images/theme_a_portrait.webp" 
                        alt="Illustrated Portrait of Anilkumar Jaiswar" 
                        class="maly-portrait-img"
+                       width="640"
+                       height="640"
                        fetchpriority="high"
                        decoding="async">
                   <!-- 5 Floating Badges in Star-Like Adjustment Around Image -->

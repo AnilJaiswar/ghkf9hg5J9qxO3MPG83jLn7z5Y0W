@@ -226,21 +226,25 @@
   </script>
 
   <!-- Preload Critical Above-The-Fold Assets -->
-  <link rel="preload" as="image" href="assets/images/theme_a_portrait.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/images/theme_a_portrait.webp" type="image/webp" fetchpriority="high">
 
-  <!-- Streamlined Google Fonts for Active Themes -->
+  <!-- Streamlined Google Fonts (Non-Render Blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+  </noscript>
 
   <!-- Base & Theme Switcher Styles -->
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/theme-switcher.css">
 
-  <!-- Independent Theme Stylesheets (Pre-parsed & Scoped for Zero-FOUC Instant Transitions) -->
+  <!-- Independent Theme Stylesheets (Theme A critical; D & E loaded non-blocking) -->
   <link id="theme-a-stylesheet" rel="stylesheet" href="styles/theme-a-maly.css">
-  <link id="theme-d-stylesheet" rel="stylesheet" href="styles/theme-d-biophilic.css">
-  <link id="theme-e-stylesheet" rel="stylesheet" href="styles/theme-e-swiss.css">
+  <link id="theme-d-stylesheet" rel="stylesheet" href="styles/theme-d-biophilic.css" media="print" onload="this.media='all'">
+  <link id="theme-e-stylesheet" rel="stylesheet" href="styles/theme-e-swiss.css" media="print" onload="this.media='all'">
 
   <style>
     /* Print Stylesheet for Instant CV Export */
@@ -273,10 +277,574 @@
     </div>
   </div>
 
-  <!-- Dynamic Theme Root (Mounted by dedicated Theme Renderers) -->
+  <!-- Dynamic Theme Root (Pre-rendered for Instant FCP/LCP & Perfect SEO Indexing) -->
   <div id="theme-app-root">
-    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: monospace;">
-      <span>Initializing Anilkumar Jaiswar Portfolio...</span>
+<div class="theme-a-container" data-mode="light">
+      <!-- Editorial Top Masthead -->
+      <header class="maly-masthead">
+        <div class="maly-logo-group">
+          <span class="maly-logo-title">ANILKUMAR R. JAISWAR</span>
+          <span class="maly-logo-sub">Sr. Android Developer | 8+ Years | Banking &amp; Fintech Specialist</span>
+        </div>
+        <nav>
+          <ul class="maly-nav-chapters">
+            <li><a href="#part-01" class="maly-nav-link">SUMMARY</a></li>
+            <li><a href="#part-02" class="maly-nav-link">BANKING APPS</a></li>
+            <li><a href="#part-03" class="maly-nav-link">SKILLS &amp; SECURITY</a></li>
+            <li><a href="#part-04" class="maly-nav-link">EXPERIENCE</a></li>
+            <li><a href="#part-05" class="maly-nav-link">CONTACT</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Master Hero Spread -->
+      <main>
+        <section id="spread-hero" class="maly-hero-spread">
+          <div class="maly-spread-frame">
+            <div class="maly-hero-grid">
+              <!-- Left Column: Primary Non-Redundant Overview & Specs -->
+              <div class="maly-hero-content">
+                <div class="maly-hero-eyebrow">
+                  <span class="maly-pill-tag">PORTFOLIO &amp; ARCHIVE</span>
+                  <span class="maly-period-badge">2016 – 2026</span>
+                </div>
+
+                <h1 class="maly-hero-title">ANILKUMAR R. JAISWAR</h1>
+
+                <div class="maly-hero-subtitle">
+                  Senior Android Developer • Banking &amp; Fintech Specialist
+                </div>
+
+                <p class="maly-hero-summary">
+                  8+ years developing, securing, and scaling enterprise-level Android applications. Currently at <strong>Snapwork Technologies</strong>, architecting solutions for premier banking clients including HDFC Bank, IndusInd Bank, Kotak Mahindra Bank, IDBI Bank, and Bajaj Finserv with proven expertise in VAPT security remediation and SDK orchestrations.
+                </p>
+
+                <div class="maly-hero-specs">
+                  <div class="maly-spec-item">
+                    <span class="maly-spec-label">Current Role:</span>
+                    <span class="maly-spec-val">Senior Android Developer @ Snapwork Technologies (Mumbai)</span>
+                  </div>
+                  <div class="maly-spec-item">
+                    <span class="maly-spec-label">Core Expertise:</span>
+                    <span class="maly-spec-val">Banking &amp; Fintech • VAPT Remediation • Hybrid Plugins • Architecture</span>
+                  </div>
+                </div>
+
+                <div class="maly-action-row">
+                  <a href="#part-02" class="maly-btn-ink">Explore Banking Apps ↓</a>
+                  <button id="maly-cv-btn" class="maly-btn-outline">Download Resume 📄</button>
+                  <button id="maly-copy-email" class="maly-btn-outline">Copy Email ✉️</button>
+                </div>
+              </div>
+
+              <!-- Right Column: Illustrated Portrait with 5 Floating Badges in Star Formation -->
+              <div class="maly-hero-media">
+                <div class="maly-portrait-wrapper">
+                  <img src="assets/images/theme_a_portrait.webp" alt="Illustrated Portrait of Anilkumar Jaiswar" class="maly-portrait-img" width="640" height="640" fetchpriority="high" decoding="async">
+                  <!-- 5 Floating Badges in Star-Like Adjustment Around Image -->
+                  <div class="maly-floating-badge star-point-top">🛡️ VAPT &amp; Security</div>
+                  <div class="maly-floating-badge star-point-upper-left">⚡ 8+ Years Exp</div>
+                  <div class="maly-floating-badge star-point-lower-left">✦ Banking &amp; Fintech</div>
+                  <div class="maly-floating-badge star-point-upper-right">🏛️ Clean &amp; MVVM</div>
+                  <div class="maly-floating-badge star-point-lower-right">📱 Millions of Users</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Chapter 01: Summary & Foundations -->
+        <section id="part-01" class="maly-chapter-section">
+          <div class="maly-chapter-header">
+            <div>
+              <h2 class="maly-chapter-title">Executive Summary &amp; Scale</h2>
+              <span style="font-size:0.8rem; color:var(--maly-blue); font-weight:700;">PROVEN TRACK RECORD (2016–2026)</span>
+            </div>
+            <div class="maly-chapter-desc">
+              Designing complex system architectures and leading cross-functional teams to deliver high-quality banking solutions.
+            </div>
+          </div>
+
+          <div class="maly-bio-grid">
+            <div class="maly-bio-content">
+              <p>Results-driven Senior Android Developer with 8+ years of experience (2016–2026) in developing, securing, and scaling enterprise-level Android applications. Currently working at Snapwork Technologies Pvt. Ltd. as a Senior Android Developer, handling projects for top banking clients like HDFC Bank, IndusInd Bank, IDBI Bank, Kotak Mahindra Bank, Bajaj Finserv, ICICI Bank, and others. Strong experience in technical decision-making, designing complex system architectures, and leading cross-functional teams to deliver high-quality banking solutions. Skilled in security (VAPT remediation), Cordova hybrid plugin development, and complete SDK integrations. Also experienced in using AI tools like GitHub Copilot, Cursor, and others to improve development speed and code quality.</p>
+              <div class="maly-quote-box">
+                "Strong experience in technical decision-making, designing complex system architectures, and leading cross-functional teams to deliver high-quality banking solutions."
+              </div>
+            </div>
+
+            <div class="maly-stats-grid">
+              
+                <div class="maly-stat-card">
+                  <div class="maly-stat-num">8+</div>
+                  <div class="maly-stat-label">Years Experience</div>
+                  <div class="maly-stat-detail">2016 – 2026 Enterprise Android</div>
+                </div>
+              
+                <div class="maly-stat-card">
+                  <div class="maly-stat-num">10+</div>
+                  <div class="maly-stat-label">Top Banking Clients</div>
+                  <div class="maly-stat-detail">HDFC, IndusInd, IDBI, Kotak, Bajaj &amp; ICICI</div>
+                </div>
+              
+                <div class="maly-stat-card">
+                  <div class="maly-stat-num">4</div>
+                  <div class="maly-stat-label">Career Roles</div>
+                  <div class="maly-stat-detail">Snapwork, RSalesArm, Clear Secured, Startup</div>
+                </div>
+              
+                <div class="maly-stat-card">
+                  <div class="maly-stat-num">28</div>
+                  <div class="maly-stat-label">Technical Skills</div>
+                  <div class="maly-stat-detail">Android, Security, VAPT, SDKs &amp; AI Tools</div>
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <!-- Chapter 02: High-Stakes Banking Projects -->
+        <section id="part-02" class="maly-chapter-section">
+          <div class="maly-chapter-header">
+            <div>
+              <h2 class="maly-chapter-title">High-Stakes Banking Projects</h2>
+              <span style="font-size:0.8rem; color:var(--maly-blue); font-weight:700;">ENTERPRISE CLIENT DELIVERIES</span>
+            </div>
+            <div class="maly-chapter-desc">
+              Click any project to inspect technical achievements, VAPT remediation details, and integrated SDKs.
+            </div>
+          </div>
+
+          <div class="maly-projects-grid">
+            
+              <article class="maly-project-card" data-project-id="y3e7e72qeq2d">
+                <span class="maly-card-part-num">01</span>
+                <span class="maly-project-client">HDFC Bank (Mobile App)</span>
+                <h3 class="maly-project-title">HDFC Smart Account Opening</h3>
+                <div>
+                  <span class="maly-project-metrics">Bank Employee Only</span>
+                </div>
+                <p class="maly-project-tagline">HDFC Smart Account Opening : (Bank Employee Only)</p>
+                <div class="maly-project-tags">
+                  <span class="maly-tag">VAPT Remediation</span><span class="maly-tag">Play Store Compliance</span><span class="maly-tag">Morpho L0/L1</span><span class="maly-tag">Intune MDM</span><span class="maly-tag">Aadhaar eKYC</span>
+                </div>
+                <div class="maly-card-action">
+                  <span>View Project Details</span> →
+                </div>
+              </article>
+            
+              <article class="maly-project-card" data-project-id="aur8u8i60svx">
+                <span class="maly-card-part-num">02</span>
+                <span class="maly-project-client">IDBI Bank (Mobile App)</span>
+                <h3 class="maly-project-title">IDBI Bank GO Mobile+</h3>
+                <div>
+                  <span class="maly-project-metrics">1Cr+ Downloads</span>
+                </div>
+                <p class="maly-project-tagline">IDBI Bank GO Mobile+ : (1Cr+ Downloads)</p>
+                <div class="maly-project-tags">
+                  <span class="maly-tag">1Cr+ Downloads</span><span class="maly-tag">Play Integrity</span><span class="maly-tag">Device Binding</span><span class="maly-tag">ProtecttAI</span><span class="maly-tag">Dynatrace</span>
+                </div>
+                <div class="maly-card-action">
+                  <span>View Project Details</span> →
+                </div>
+              </article>
+            
+              <article class="maly-project-card" data-project-id="4gmp05mf705e">
+                <span class="maly-card-part-num">03</span>
+                <span class="maly-project-client">Bajaj Finance Limited (Mobile App)</span>
+                <h3 class="maly-project-title">Bajaj Finance : UPI &amp; Loan App</h3>
+                <div>
+                  <span class="maly-project-metrics">10Cr+ Downloads</span>
+                </div>
+                <p class="maly-project-tagline">Bajaj Finance : UPI &amp; Loan App : (10Cr+ Downloads)</p>
+                <div class="maly-project-tags">
+                  <span class="maly-tag">10Cr+ Downloads</span><span class="maly-tag">Native C++</span><span class="maly-tag">Deep-Link Router</span><span class="maly-tag">AEM Caching</span><span class="maly-tag">12+ SDKs</span>
+                </div>
+                <div class="maly-card-action">
+                  <span>View Project Details</span> →
+                </div>
+              </article>
+            
+              <article class="maly-project-card" data-project-id="ad9hh00fvfup">
+                <span class="maly-card-part-num">04</span>
+                <span class="maly-project-client">Bajaj Housing Finance Limited (Mobile App)</span>
+                <h3 class="maly-project-title">Bajaj Housing Finance</h3>
+                <div>
+                  <span class="maly-project-metrics">1L+ Downloads</span>
+                </div>
+                <p class="maly-project-tagline">Bajaj Housing Finance : (1L+ Downloads)</p>
+                <div class="maly-project-tags">
+                  <span class="maly-tag">1L+ Downloads</span><span class="maly-tag">BundleTool</span><span class="maly-tag">BillDesk V2</span><span class="maly-tag">Firebase Perf Monitor</span><span class="maly-tag">5G/4G Plugins</span>
+                </div>
+                <div class="maly-card-action">
+                  <span>View Project Details</span> →
+                </div>
+              </article>
+            
+              <article class="maly-project-card" data-project-id="3ubkpjaixjxm">
+                <span class="maly-card-part-num">05</span>
+                <span class="maly-project-client">IndusInd Bank Ltd. (Mobile App)</span>
+                <h3 class="maly-project-title">IndusInd Merchant Solutions (IMS)</h3>
+                <div>
+                  <span class="maly-project-metrics">5L+ Downloads</span>
+                </div>
+                <p class="maly-project-tagline">IndusInd Merchant Solutions (IMS) — (rebranded to INDIE for Business, Jul 2025) : (5L+ Downloads)</p>
+                <div class="maly-project-tags">
+                  <span class="maly-tag">5L+ Downloads</span><span class="maly-tag">OneSpan</span><span class="maly-tag">Signzy VKYC</span><span class="maly-tag">Lookout SDK</span><span class="maly-tag">Custom Tab</span>
+                </div>
+                <div class="maly-card-action">
+                  <span>View Project Details</span> →
+                </div>
+              </article>
+            
+              <article class="maly-project-card" data-project-id="xxcmpvoi8sst">
+                <span class="maly-card-part-num">06</span>
+                <span class="maly-project-client">Kotak Mahindra Bank Ltd. (Mobile App)</span>
+                <h3 class="maly-project-title">Kotak fyn: Business Banking App</h3>
+                <div>
+                  <span class="maly-project-metrics">1L+ Downloads</span>
+                </div>
+                <p class="maly-project-tagline">Kotak fyn: Business Banking App : (1L+ Downloads)</p>
+                <div class="maly-project-tags">
+                  <span class="maly-tag">1L+ Downloads</span><span class="maly-tag">BioCatch SDK</span><span class="maly-tag">SSL Pinning</span><span class="maly-tag">Consent API SMS</span><span class="maly-tag">SIM Checks</span>
+                </div>
+                <div class="maly-card-action">
+                  <span>View Project Details</span> →
+                </div>
+              </article>
+            
+              <article class="maly-project-card" data-project-id="x2y02grtl6d3">
+                <span class="maly-card-part-num">07</span>
+                <span class="maly-project-client">HDFC SEC: Share Market Trading &amp; Demat Account App (Mobile App)</span>
+                <h3 class="maly-project-title">HDFC Securities InvestRight</h3>
+                <div>
+                  <span class="maly-project-metrics">10L+ Downloads</span>
+                </div>
+                <p class="maly-project-tagline">HDFC Securities InvestRight : (10L+ Downloads)</p>
+                <div class="maly-project-tags">
+                  <span class="maly-tag">10L+ Downloads</span><span class="maly-tag">HSL Streamer</span><span class="maly-tag">Full VAPT</span><span class="maly-tag">SSL Certificate</span><span class="maly-tag">API Migration</span>
+                </div>
+                <div class="maly-card-action">
+                  <span>View Project Details</span> →
+                </div>
+              </article>
+            
+          </div>
+        </section>
+
+        <!-- Chapter 03: Security & Skills -->
+        <section id="part-03" class="maly-chapter-section">
+          <div class="maly-chapter-header">
+            <div>
+              <h2 class="maly-chapter-title">Technical Skills &amp; Security</h2>
+              <span style="font-size:0.8rem; color:var(--maly-blue); font-weight:700;">CORE COMPETENCIES</span>
+            </div>
+            <div class="maly-chapter-desc">
+              Security-first development, VAPT remediation, Clean Architecture, and AI tools integration.
+            </div>
+          </div>
+
+          <div class="maly-skills-grid">
+            
+              <div class="maly-skill-cluster">
+                <h3 class="maly-cluster-title">
+                  <span>Core Android &amp; Architecture</span>
+                  <span style="font-size:0.8rem; color:var(--maly-blue);">●</span>
+                </h3>
+                <ul class="maly-skill-items">
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Kotlin</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Java</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">MVVM</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Clean Architecture</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">SOLID</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Jetpack Compose</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Coroutines</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Concurrency</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Multi-module architecture</span>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+              <div class="maly-skill-cluster">
+                <h3 class="maly-cluster-title">
+                  <span>Security &amp; VAPT</span>
+                  <span style="font-size:0.8rem; color:var(--maly-blue);">●</span>
+                </h3>
+                <ul class="maly-skill-items">
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Security</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">VAPT remediation</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Play Integrity</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Cryptography</span>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+              <div class="maly-skill-cluster">
+                <h3 class="maly-cluster-title">
+                  <span>SDKs, Hardware &amp; Hybrid</span>
+                  <span style="font-size:0.8rem; color:var(--maly-blue);">●</span>
+                </h3>
+                <ul class="maly-skill-items">
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">SDK integration</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">SDK</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Cordova</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Cordova plugins</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Biometric</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Camera</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Hardware integration</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Deep link</span>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+              <div class="maly-skill-cluster">
+                <h3 class="maly-cluster-title">
+                  <span>Tooling &amp; AI Workflows</span>
+                  <span style="font-size:0.8rem; color:var(--maly-blue);">●</span>
+                </h3>
+                <ul class="maly-skill-items">
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Firebase</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Gradle</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Git</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">SonarQube</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Animation</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">Prompt engineering</span>
+                    </li>
+                  
+                    <li class="maly-skill-row">
+                      <span class="maly-skill-name">AI tools</span>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+          </div>
+        </section>
+
+        <!-- Chapter 04: The Chronicle -->
+        <section id="part-04" class="maly-chapter-section">
+          <div class="maly-chapter-header">
+            <div>
+              <h2 class="maly-chapter-title">Work Experience Chronicle</h2>
+              <span style="font-size:0.8rem; color:var(--maly-blue); font-weight:700;">CAREER TIMELINE (2016–2026)</span>
+            </div>
+            <div class="maly-chapter-desc">
+              8+ years of enterprise Android development across premier financial institutions and technology firms.
+            </div>
+          </div>
+
+          <div class="maly-timeline">
+            
+              <div class="maly-timeline-item">
+                <div class="maly-timeline-meta">
+                  <div class="maly-timeline-date">Apr 2021 – Present</div>
+                  <div class="maly-timeline-loc">Chembur, Mumbai</div>
+                </div>
+                <div class="maly-timeline-body">
+                  <h4>Snapwork Technologies Pvt. Ltd.</h4>
+                  <h5>Sr. Android Developer — Snapwork Technologies Pvt. Ltd.</h5>
+                  <p>Strategic Lead Android Engineer managing high-stakes banking applications for India's premier financial institutions. Responsible for critical technical decision-making, defining secure app architectures, and mentoring junior developers. Specialized in vulnerability remediation (VAPT), performance-first engineering, and complex SDK orchestrations. Managing 10+ major banking client deliveries simultaneously with a focus on security-first development and high-performance delivery.</p>
+                  
+                </div>
+              </div>
+            
+              <div class="maly-timeline-item">
+                <div class="maly-timeline-meta">
+                  <div class="maly-timeline-date">Nov 2018 – Aug 2019</div>
+                  <div class="maly-timeline-loc">Ghatkopar, Mumbai</div>
+                </div>
+                <div class="maly-timeline-body">
+                  <h4>RSalesArm IT Services Pvt. Ltd.</h4>
+                  <h5>Mobile Application Developer — RSalesArm IT Services Pvt. Ltd.</h5>
+                  
+                  
+                    <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
+                      <li style="margin-bottom:0.5rem;">Developed in-house apps (Royce, Tuneem Pro) featuring multimedia streaming (audio/video/image capture and playback), social interactions (comments, likes), event tracking, interactive quizzes, and an automated attendance system.</li><li style="margin-bottom:0.5rem;">Alkem Laboratories — Alkepedia (10K+ Downloads): Feature development and maintenance.</li><li style="margin-bottom:0.5rem;">Reckitt Benckiser — RBF3 (Internal Training App): Feature development and maintenance.</li>
+                    </ul>
+                  
+                </div>
+              </div>
+            
+              <div class="maly-timeline-item">
+                <div class="maly-timeline-meta">
+                  <div class="maly-timeline-date">Feb 2016 – Nov 2017</div>
+                  <div class="maly-timeline-loc">Sion, Mumbai</div>
+                </div>
+                <div class="maly-timeline-body">
+                  <h4>Clear Secured Services Pvt. Ltd.</h4>
+                  <h5>Software Developer — Clear Secured Services Pvt. Ltd.</h5>
+                  
+                  
+                    <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
+                      <li style="margin-bottom:0.5rem;">Contributed to the development and delivery of enterprise Android applications, including Fencer Audit (auditing mobile app), Fencer Telecom (internal enterprise mobile app), and Cleartask (home services mobile app).</li><li style="margin-bottom:0.5rem;">Collaborated with cross-functional teams throughout the development lifecycle, contributing to requirement understanding, implementation, testing, and Play Store deployment.</li>
+                    </ul>
+                  
+                </div>
+              </div>
+            
+              <div class="maly-timeline-item">
+                <div class="maly-timeline-meta">
+                  <div class="maly-timeline-date">2017 – 2018</div>
+                  <div class="maly-timeline-loc">References available on request.</div>
+                </div>
+                <div class="maly-timeline-body">
+                  <h4>Independent / Startup work</h4>
+                  <h5>Independent / Startup work — Built 5+ applications across multiple domains</h5>
+                  
+                  
+                </div>
+              </div>
+            
+
+            <div class="maly-timeline-item" style="border-left: 6px solid var(--maly-yellow);">
+              <div class="maly-timeline-meta">
+                <div class="maly-timeline-date">Graduated 2015</div>
+                <div class="maly-timeline-loc">Mumbai, Maharashtra, India</div>
+              </div>
+              <div class="maly-timeline-body">
+                <h4>Mumbai University</h4>
+                <h5>B.Sc. Information Technology</h5>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Chapter 05: Direct Contact -->
+        <section id="part-05" class="maly-chapter-section">
+          <div class="maly-chapter-header">
+            <div>
+              <h2 class="maly-chapter-title">Direct Inquiries &amp; Contact</h2>
+              <span style="font-size:0.8rem; color:var(--maly-blue); font-weight:700;">CONNECT DIRECTLY</span>
+            </div>
+            <div class="maly-chapter-desc">
+              Available for enterprise Android engineering, VAPT security audits, and banking mobile application development.
+            </div>
+          </div>
+
+          <div class="maly-contact-spread">
+            <div class="maly-contact-info">
+              <h3>Let's discuss your banking application needs.</h3>
+              <p style="font-size:0.95rem; line-height:1.7; color:var(--maly-ink-muted);">
+                Managing 10+ major banking client deliveries simultaneously with a focus on security-first development and high-performance delivery.
+              </p>
+
+              <div class="maly-contact-detail-row">
+                <a href="mailto:anil.rjx8@gmail.com" class="maly-contact-pill">
+                  <span>✉️ anil.rjx8@gmail.com</span>
+                  <span>SEND EMAIL ↗</span>
+                </a>
+                <a href="tel:+919137510191" class="maly-contact-pill">
+                  <span>📞 +91 91375 10191</span>
+                  <span>CALL DIRECT ↗</span>
+                </a>
+                <div class="maly-contact-pill" style="cursor:default;">
+                  <span>📍 Mumbai</span>
+                  <span style="font-weight:700; letter-spacing:0.05em;">MAHARASHTRA, INDIA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="maly-contact-form-col">
+              <form id="maly-contact-form" onsubmit="event.preventDefault(); window.appUtils.handleContactSubmit(this);">
+                <div class="maly-form-group">
+                  <label for="maly-name">Your Name</label>
+                  <input type="text" id="maly-name" class="maly-input" required="" placeholder="Full Name">
+                </div>
+                <div class="maly-form-group">
+                  <label for="maly-email">Email Address</label>
+                  <input type="email" id="maly-email" class="maly-input" required="" placeholder="name@company.com">
+                </div>
+                <div class="maly-form-group">
+                  <label for="maly-message">Message / Project Scope</label>
+                  <textarea id="maly-message" rows="4" class="maly-textarea" required="" placeholder="Your message..."></textarea>
+                </div>
+                <button type="submit" class="maly-btn-ink" style="width:100%;">Send Message 📨</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   </div>
 
@@ -284,7 +852,7 @@
   <aside class="theme-compact-hub" id="theme-compact-hub" aria-label="Theme & Mode Controller">
     <div class="theme-compact-bar">
       <!-- Theme Dropdown Trigger -->
-      <button id="theme-dropdown-trigger" class="theme-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false" title="Switch Theme (Keyboard: 1-3 or T)">
+      <button id="theme-dropdown-trigger" class="theme-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Switch portfolio theme (Current: Storybook)" title="Switch Theme (Keyboard: 1-3 or T)">
         <span id="theme-active-dot" class="theme-active-dot"></span>
         <span id="theme-active-label" class="theme-dropdown-label">Storybook</span>
         <span class="theme-caret-icon">▾</span>
@@ -293,10 +861,10 @@
       <div class="theme-compact-sep"></div>
 
       <!-- Dark / Light Mode Toggle Button -->
-      <button id="mode-toggle-btn" class="theme-tool-btn" type="button" title="Toggle Dark/Light Mode (Key: D)">🌙</button>
+      <button id="mode-toggle-btn" class="theme-tool-btn" type="button" aria-label="Toggle dark and light display mode" title="Toggle Dark/Light Mode (Key: D)">🌙</button>
 
       <!-- Sound Toggle -->
-      <button id="hud-sound-toggle" class="theme-tool-btn" type="button" title="Toggle Sound FX">🔊</button>
+      <button id="hud-sound-toggle" class="theme-tool-btn" type="button" aria-label="Toggle user interface sound effects" title="Toggle Sound FX">🔊</button>
     </div>
 
     <!-- Dropdown Menu Popover -->
@@ -349,6 +917,6 @@
   </div>
 
   <!-- Zero-dependency Standalone Application Script (Runs on file:/// and http://) -->
-  <script src="bundle.js"></script>
+  <script src="bundle.js" defer></script>
 </body>
 </html>

@@ -320,6 +320,7 @@
 
 .maly-portrait-img {
   width: 90%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 18px;
