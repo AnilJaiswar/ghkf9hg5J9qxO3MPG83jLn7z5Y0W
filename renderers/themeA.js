@@ -1,4 +1,4 @@
-// Theme A: Editorial Storybook Renderer (Artistic Illustrated Chapter Spreads)
+﻿// Theme A: Editorial Storybook Renderer (Artistic Illustrated Chapter Spreads)
 // Inspired by Reference Image 1 (Editorial papyrus layout with 100% genuine content)
 
 export function renderThemeA(data, container, utils) {
@@ -66,10 +66,10 @@ export function renderThemeA(data, container, utils) {
               <!-- Right Column: Illustrated Portrait with 5 Floating Badges in Star Formation -->
               <div class="maly-hero-media">
                 <div class="maly-portrait-wrapper">
-                  <img src="assets/images/theme_a_portrait.webp" 
-                       srcset="assets/images/theme_a_portrait_380.webp 380w, assets/images/theme_a_portrait_534.webp 534w, assets/images/theme_a_portrait.webp 640w"
-                       sizes="(max-width: 768px) 280px, 310px"
-                       alt="Illustrated Portrait of Anilkumar Jaiswar" 
+                  <img src="assets/images/theme_a_portrait_250.webp"
+                       srcset="assets/images/theme_a_portrait_250.webp 250w, assets/images/theme_a_portrait_380.webp 380w, assets/images/theme_a_portrait_534.webp 534w, assets/images/theme_a_portrait.webp 640w"
+                       sizes="(max-width: 768px) 250px, 244px"
+                       alt="Illustrated Portrait of Anilkumar Jaiswar"
                        class="maly-portrait-img"
                        width="640"
                        height="640"
