@@ -3,6 +3,40 @@
    Supports BOTH Light Mode (Papyrus Cream) and Dark Mode (Midnight Archival)
    ========================================================================== */
 
+/* Preloaded Local High-Performance Fonts (Zero Render-Blocking, Zero CLS) */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/cinzel-bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../assets/fonts/cinzel-bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/spacemono-regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/spacemono-bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 .theme-a-container {
   --maly-bg: #faf6ee;
   --maly-bg-subtle: #f3ecdf;
@@ -650,7 +684,12 @@
   font-family: var(--maly-serif);
   font-size: 1.75rem;
   font-weight: 900;
-  color: var(--maly-border);
+  color: #726f66;
+}
+
+[data-theme-mode="dark"] .maly-card-part-num,
+.theme-a-container[data-mode="dark"] .maly-card-part-num {
+  color: #9c9789;
 }
 
 .maly-project-client {
@@ -797,13 +836,16 @@
   margin-top: 0.35rem;
 }
 
-.maly-timeline-body h4 {
+.maly-timeline-body h3,
+.maly-timeline-body h4:first-child {
   font-family: var(--maly-serif);
   font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 0.25rem;
+  color: var(--maly-ink);
 }
 
+.maly-timeline-body h4,
 .maly-timeline-body h5 {
   font-size: 0.9rem;
   color: var(--maly-blue);

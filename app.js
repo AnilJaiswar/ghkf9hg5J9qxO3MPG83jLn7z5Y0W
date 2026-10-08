@@ -142,7 +142,7 @@ function openProjectModal(project) {
       <span class="modal-badge period">${project.period}</span>
     </div>
 
-    <h2 class="modal-title">${project.title}</h2>
+    <h2 id="modal-title" class="modal-title">${project.title}</h2>
     <div class="modal-client">${project.client}</div>
     <div class="modal-tagline">${project.tagline}</div>
 

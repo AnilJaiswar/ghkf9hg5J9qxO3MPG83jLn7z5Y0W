@@ -225,16 +225,17 @@
   }
   </script>
 
-  <!-- Preload Critical Above-The-Fold Assets -->
-  <link rel="preload" as="image" href="assets/images/theme_a_portrait.webp" type="image/webp" fetchpriority="high">
+  <!-- Preload Critical Above-The-Fold Assets & Local Fonts -->
+  <link rel="preload" href="assets/fonts/spacemono-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cinzel-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/images/theme_a_portrait_534.webp" imagesrcset="assets/images/theme_a_portrait_380.webp 380w, assets/images/theme_a_portrait_534.webp 534w, assets/images/theme_a_portrait.webp 640w" imagesizes="(max-width: 480px) 380px, (max-width: 768px) 534px, 640px" fetchpriority="high">
 
-  <!-- Streamlined Google Fonts (Non-Render Blocking) -->
+  <!-- Streamlined Asynchronous Fonts for Alternate Themes (Non-Render Blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;700&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&display=swap" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;700&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
   </noscript>
 
   <!-- Base & Theme Switcher Styles -->
@@ -340,7 +341,15 @@
               <!-- Right Column: Illustrated Portrait with 5 Floating Badges in Star Formation -->
               <div class="maly-hero-media">
                 <div class="maly-portrait-wrapper">
-                  <img src="assets/images/theme_a_portrait.webp" alt="Illustrated Portrait of Anilkumar Jaiswar" class="maly-portrait-img" width="640" height="640" fetchpriority="high" decoding="async">
+                  <img src="assets/images/theme_a_portrait.webp"
+                       srcset="assets/images/theme_a_portrait_380.webp 380w, assets/images/theme_a_portrait_534.webp 534w, assets/images/theme_a_portrait.webp 640w"
+                       sizes="(max-width: 480px) 380px, (max-width: 768px) 534px, 640px"
+                       alt="Illustrated Portrait of Anilkumar Jaiswar"
+                       class="maly-portrait-img"
+                       width="640"
+                       height="640"
+                       fetchpriority="high"
+                       decoding="async">
                   <!-- 5 Floating Badges in Star-Like Adjustment Around Image -->
                   <div class="maly-floating-badge star-point-top">🛡️ VAPT &amp; Security</div>
                   <div class="maly-floating-badge star-point-upper-left">⚡ 8+ Years Exp</div>
@@ -721,8 +730,8 @@
                   <div class="maly-timeline-loc">Chembur, Mumbai</div>
                 </div>
                 <div class="maly-timeline-body">
-                  <h4>Snapwork Technologies Pvt. Ltd.</h4>
-                  <h5>Sr. Android Developer — Snapwork Technologies Pvt. Ltd.</h5>
+                  <h3>Snapwork Technologies Pvt. Ltd.</h3>
+                  <h4>Sr. Android Developer — Snapwork Technologies Pvt. Ltd.</h4>
                   <p>Strategic Lead Android Engineer managing high-stakes banking applications for India's premier financial institutions. Responsible for critical technical decision-making, defining secure app architectures, and mentoring junior developers. Specialized in vulnerability remediation (VAPT), performance-first engineering, and complex SDK orchestrations. Managing 10+ major banking client deliveries simultaneously with a focus on security-first development and high-performance delivery.</p>
                   
                 </div>
@@ -734,8 +743,8 @@
                   <div class="maly-timeline-loc">Ghatkopar, Mumbai</div>
                 </div>
                 <div class="maly-timeline-body">
-                  <h4>RSalesArm IT Services Pvt. Ltd.</h4>
-                  <h5>Mobile Application Developer — RSalesArm IT Services Pvt. Ltd.</h5>
+                  <h3>RSalesArm IT Services Pvt. Ltd.</h3>
+                  <h4>Mobile Application Developer — RSalesArm IT Services Pvt. Ltd.</h4>
                   
                   
                     <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
@@ -751,8 +760,8 @@
                   <div class="maly-timeline-loc">Sion, Mumbai</div>
                 </div>
                 <div class="maly-timeline-body">
-                  <h4>Clear Secured Services Pvt. Ltd.</h4>
-                  <h5>Software Developer — Clear Secured Services Pvt. Ltd.</h5>
+                  <h3>Clear Secured Services Pvt. Ltd.</h3>
+                  <h4>Software Developer — Clear Secured Services Pvt. Ltd.</h4>
                   
                   
                     <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
@@ -768,8 +777,8 @@
                   <div class="maly-timeline-loc">References available on request.</div>
                 </div>
                 <div class="maly-timeline-body">
-                  <h4>Independent / Startup work</h4>
-                  <h5>Independent / Startup work — Built 5+ applications across multiple domains</h5>
+                  <h3>Independent / Startup work</h3>
+                  <h4>Independent / Startup work — Built 5+ applications across multiple domains</h4>
                   
                   
                 </div>
@@ -782,8 +791,8 @@
                 <div class="maly-timeline-loc">Mumbai, Maharashtra, India</div>
               </div>
               <div class="maly-timeline-body">
-                <h4>Mumbai University</h4>
-                <h5>B.Sc. Information Technology</h5>
+                <h3>Mumbai University</h3>
+                <h4>B.Sc. Information Technology</h4>
                 <p></p>
               </div>
             </div>
@@ -901,9 +910,10 @@
   </aside>
 
   <!-- Shared Technical Project Dossier Modal -->
-  <div id="project-modal" class="project-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div id="project-modal" class="project-modal-backdrop" role="dialog" aria-modal="true" aria-label="Project Technical Dossier" aria-labelledby="modal-title">
     <div class="project-modal-dialog">
       <button class="modal-close-btn" onclick="window.appUtils.closeProjectModal()" aria-label="Close dialog">✕</button>
+      <h2 id="modal-title" class="sr-only">Project Technical Dossier</h2>
       <div id="modal-body-content">
         <!-- Injected dynamically on click -->
       </div>

@@ -488,7 +488,7 @@ const portfolioData = {
         <span class="modal-badge period">${project.period}</span>
       </div>
 
-      <h2 class="modal-title">${project.title}</h2>
+      <h2 id="modal-title" class="modal-title">${project.title}</h2>
       <div class="modal-client">${project.client}</div>
       <div class="modal-tagline">${project.tagline}</div>
 
@@ -645,6 +645,8 @@ function renderThemeA(data, container, utils) {
               <div class="maly-hero-media">
                 <div class="maly-portrait-wrapper">
                   <img src="assets/images/theme_a_portrait.webp" 
+                       srcset="assets/images/theme_a_portrait_380.webp 380w, assets/images/theme_a_portrait_534.webp 534w, assets/images/theme_a_portrait.webp 640w"
+                       sizes="(max-width: 480px) 380px, (max-width: 768px) 534px, 640px"
                        alt="Illustrated Portrait of Anilkumar Jaiswar" 
                        class="maly-portrait-img"
                        width="640"
@@ -779,8 +781,8 @@ function renderThemeA(data, container, utils) {
                   <div class="maly-timeline-loc">${job.location}</div>
                 </div>
                 <div class="maly-timeline-body">
-                  <h4>${job.company}</h4>
-                  <h5>${job.position}</h5>
+                  <h3>${job.company}</h3>
+                  <h4>${job.position}</h4>
                   ${job.summary ? `<p>${job.summary}</p>` : ''}
                   ${job.highlights && job.highlights.length > 0 ? `
                     <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
@@ -797,8 +799,8 @@ function renderThemeA(data, container, utils) {
                 <div class="maly-timeline-loc">${education[0].location}</div>
               </div>
               <div class="maly-timeline-body">
-                <h4>${education[0].institution}</h4>
-                <h5>${education[0].degree}</h5>
+                <h3>${education[0].institution}</h3>
+                <h4>${education[0].degree}</h4>
                 <p>${education[0].summary}</p>
               </div>
             </div>
