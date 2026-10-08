@@ -1002,3 +1002,9 @@
     font-size: 2.2rem;
   }
 }
+
+@media (max-width: 768px) {
+  .maly-floating-badge {
+    display: none !important;
+  }
+}

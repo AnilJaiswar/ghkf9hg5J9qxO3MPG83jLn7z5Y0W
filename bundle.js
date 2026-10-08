@@ -1536,6 +1536,36 @@ function renderThemeE(data, container, utils) {
   // 7. THEME & MODE SWITCHING ENGINE
   let isSwitchingTheme = false;
 
+  function loadStylesheet(id, href) {
+    if (document.getElementById(id)) return;
+    const link = document.createElement('link');
+    link.id = id;
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }
+
+  let fontsLoaded = false;
+  function loadGoogleFonts() {
+    if (fontsLoaded || document.getElementById('google-fonts-async')) return;
+    fontsLoaded = true;
+    const link = document.createElement('link');
+    link.id = 'google-fonts-async';
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;700&family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@500;700&display=swap';
+    document.head.appendChild(link);
+  }
+
+  function ensureThemeResources(themeId) {
+    if (themeId === 'theme-d') {
+      loadStylesheet('theme-d-stylesheet', 'styles/theme-d-biophilic.css');
+      loadGoogleFonts();
+    } else if (themeId === 'theme-e') {
+      loadStylesheet('theme-e-stylesheet', 'styles/theme-e-swiss.css');
+      loadGoogleFonts();
+    }
+  }
+
   function updateThemeUI(themeId) {
     const activeThemeObj = portfolioData.themes.find(t => t.id === themeId);
     const labelEl = document.getElementById('theme-active-label');
@@ -1591,6 +1621,7 @@ function renderThemeE(data, container, utils) {
         updateThemeUI(newThemeId);
         return;
       }
+      ensureThemeResources(newThemeId);
       appContainer.innerHTML = '';
       const renderer = renderers[newThemeId];
       renderer(portfolioData, appContainer, window.appUtils);
@@ -1598,6 +1629,7 @@ function renderThemeE(data, container, utils) {
       return;
     }
 
+    ensureThemeResources(newThemeId);
     isSwitchingTheme = true;
 
     // Update loader text & theme accent color
@@ -1620,6 +1652,7 @@ function renderThemeE(data, container, utils) {
 
     setTimeout(() => {
       // Clear and render new theme into the hidden container
+      ensureThemeResources(newThemeId);
       appContainer.innerHTML = '';
       const renderer = renderers[newThemeId];
       renderer(portfolioData, appContainer, window.appUtils);
@@ -1760,6 +1793,18 @@ function renderThemeE(data, container, utils) {
 
     // Initial Mount
     switchTheme(activeThemeId, true);
+
+    if (trigger) {
+      trigger.addEventListener('pointerenter', () => {
+        ensureThemeResources('theme-d');
+        ensureThemeResources('theme-e');
+      }, { once: true });
+    }
+
+    setTimeout(() => {
+      ensureThemeResources('theme-d');
+      ensureThemeResources('theme-e');
+    }, 5000);
 
     if (paramModal) {
       const targetProj = portfolioData.projects.find(p => p.id === paramModal);
