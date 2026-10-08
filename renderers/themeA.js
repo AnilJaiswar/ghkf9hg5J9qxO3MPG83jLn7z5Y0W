@@ -68,7 +68,7 @@ export function renderThemeA(data, container, utils) {
                 <div class="maly-portrait-wrapper">
                   <img src="assets/images/theme_a_portrait.webp" 
                        srcset="assets/images/theme_a_portrait_380.webp 380w, assets/images/theme_a_portrait_534.webp 534w, assets/images/theme_a_portrait.webp 640w"
-                       sizes="(max-width: 480px) 380px, (max-width: 768px) 534px, 640px"
+                       sizes="(max-width: 768px) 280px, 310px"
                        alt="Illustrated Portrait of Anilkumar Jaiswar" 
                        class="maly-portrait-img"
                        width="640"
