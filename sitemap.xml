@@ -3,13 +3,13 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://aniljaiswar.com/</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://aniljaiswar.com/assets/images/theme_a_portrait.webp</image:loc>
-      <image:title>Anil Jaiswar - Senior Android Developer</image:title>
-      <image:caption>Portrait of Anil Jaiswar, Senior Android Developer &amp; Banking Mobility Specialist</image:caption>
+      <image:title>Anil Jaiswar (Anilkumar R. Jaiswar) — Senior Android Developer</image:title>
+      <image:caption>Official portrait of Anil Jaiswar, Senior Android Developer architecting enterprise banking apps</image:caption>
     </image:image>
   </url>
 </urlset>
