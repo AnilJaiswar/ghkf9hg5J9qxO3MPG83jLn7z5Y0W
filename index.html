@@ -430,7 +430,7 @@
     }
 
     .modal-theme-a .modal-highlights-list li::before {
-      content: "âœ¦";
+      content: "\25CF ";
       color: #231f20
     }
 
@@ -550,7 +550,8 @@
     }
 
     .modal-theme-d .modal-highlights-list li::before {
-      content: "ðŸŒ¿"
+      content: "\25CF ";
+      color: #2d4a35;
     }
 
     .modal-theme-d .modal-tag {
@@ -679,7 +680,7 @@
     }
 
     .modal-theme-e .modal-highlights-list li::before {
-      content: "â–ª";
+      content: "\25CF ";
       color: #000000
     }
 
@@ -873,7 +874,7 @@
     }
 
     .modal-highlights-list li::before {
-      content: "ðŸ›¡ï¸";
+      content: "\25CF ";
       position: absolute;
       left: 0;
       top: 0.1rem;
@@ -1270,45 +1271,50 @@
       color: #475569
     }
 
-    .maly-masthead,
-    .glass-header-nav,
-    .bio-navbar,
-    .swiss-top-rail {
-      padding-right: 250px !important
-    }
-
-    @media (max-width:900px) {
-
+    /* Header Clearance Utility across desktop layouts so header items do not overlap top-right hub */
+    @media (min-width: 901px) {
       .maly-masthead,
-      .glass-header-nav,
       .bio-navbar,
       .swiss-top-rail {
-        padding-right: 170px !important
+        padding-right: 220px !important;
       }
     }
 
-    @media (max-width:600px) {
+    @media (max-width: 900px) and (min-width: 769px) {
+      .maly-masthead,
+      .bio-navbar,
+      .swiss-top-rail {
+        padding-right: 170px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
       .theme-compact-hub {
-        top: 0.4rem;
-        right: 0.4rem
+        top: 0.35rem;
+        right: 0.35rem;
       }
 
       .theme-dropdown-trigger {
         min-height: 36px;
         min-width: 36px;
         justify-content: center;
-        padding: 0.25rem 0.45rem
+        padding: 0.25rem 0.45rem;
       }
 
       .theme-dropdown-label {
-        display: none
+        display: none;
       }
 
+      .theme-menu-popover {
+        width: min(260px, calc(100vw - 1rem));
+        right: 0;
+      }
+
+      /* On mobile <= 768px, headers use their own natural padding with brand clearance */
       .maly-masthead,
-      .glass-header-nav,
       .bio-navbar,
       .swiss-top-rail {
-        padding-right: 120px !important
+        padding-right: 0.85rem !important;
       }
     }
 
@@ -1511,6 +1517,10 @@
       transition: transform 0.2s ease
     }
 
+    .maly-nav-full {
+      display: inline;
+    }
+
     .maly-nav-link:hover::after {
       transform: scaleX(1)
     }
@@ -1590,7 +1600,7 @@
       color: var(--maly-blue);
       letter-spacing: 0.02em;
       margin-bottom: 1rem;
-      white-space: nowrap
+      word-break: break-word;
     }
 
     .maly-hero-summary {
@@ -1796,6 +1806,10 @@
       box-shadow: 3.5px 3.5px 0px #000000 !important
     }
 
+    .maly-mobile-badge-row {
+      display: none;
+    }
+
     .maly-action-row {
       display: flex;
       justify-content: flex-start;
@@ -1951,7 +1965,7 @@
 
     .maly-projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
       gap: 2.5rem
     }
 
@@ -2049,7 +2063,7 @@
 
     .maly-skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
       gap: 2rem
     }
 
@@ -2145,10 +2159,59 @@
       margin-bottom: 1rem
     }
 
+    .maly-chapter-section {
+      scroll-margin-top: 5.5rem;
+    }
+
     .maly-timeline-body p {
       font-size: 0.88rem;
       line-height: 1.7;
       color: var(--maly-ink-muted)
+    }
+
+    .maly-timeline-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.75rem 0 0.85rem 0;
+    }
+
+    .maly-timeline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      background: var(--maly-bg-subtle);
+      border: 1.5px solid var(--maly-ink);
+      color: var(--maly-ink);
+      border-radius: 4px;
+      box-shadow: 2px 2px 0px var(--maly-ink);
+      white-space: nowrap;
+    }
+
+    [data-theme-mode="dark"] .maly-timeline-pill {
+      background: #1e1e1a;
+      border-color: #383830;
+      color: #f4efe4;
+      box-shadow: 2px 2px 0px #000000;
+    }
+
+    .maly-timeline-highlights {
+      margin-top: 1rem;
+      padding-left: 1.25rem;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .maly-timeline-highlights li {
+      margin-bottom: 0.5rem;
+      color: var(--maly-ink);
+    }
+
+    .maly-timeline-highlights li::marker {
+      color: var(--maly-blue);
     }
 
     .maly-contact-spread {
@@ -2290,8 +2353,385 @@
     }
 
     @media (max-width:768px) {
+      .maly-masthead {
+        padding: 0.65rem 0.85rem !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .maly-logo-group {
+        padding-right: 110px;
+        max-width: calc(100% - 110px);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      .maly-logo-title {
+        font-size: clamp(0.78rem, 3.8vw, 0.95rem);
+        letter-spacing: 0.04em;
+        line-height: 1.25;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        font-weight: 800;
+      }
+
+      .maly-logo-sub {
+        font-size: clamp(0.58rem, 2.5vw, 0.63rem);
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+        white-space: normal;
+        overflow: visible;
+        color: var(--maly-ink-muted);
+        margin-top: 2px;
+      }
+
+      .maly-nav-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0.2rem 0;
+      }
+
+      .maly-nav-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      .maly-nav-full {
+        display: none;
+      }
+
+      .maly-nav-chapters {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        gap: 0.25rem !important;
+        padding: 0.1rem 0;
+        width: 100% !important;
+      }
+
+      .maly-nav-chapters li {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+
+      .maly-nav-link {
+        display: block !important;
+        font-size: 0.64rem !important;
+        padding: 0.25rem 0.25rem !important;
+        background: var(--maly-paper);
+        border: 1.5px solid var(--maly-ink);
+        border-radius: 4px;
+        box-shadow: 2px 2px 0px var(--maly-ink);
+        white-space: nowrap;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .maly-hero-spread {
+        padding: 0.85rem 0.65rem 1.75rem 0.65rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+      }
+
+      .maly-spread-frame {
+        padding: 1.25rem 0.85rem !important;
+        box-shadow: 4px 4px 0px var(--maly-ink) !important;
+        border-radius: 6px;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+      }
+
+      .maly-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      .maly-hero-content {
+        align-items: flex-start !important;
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      .maly-hero-eyebrow {
+        justify-content: flex-start !important;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-bottom: 0.5rem;
+        max-width: 100%;
+      }
+
+      .maly-hero-title {
+        font-size: clamp(1.5rem, 6.5vw, 2rem) !important;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        word-break: break-word;
+        margin-bottom: 0.35rem;
+        text-align: left;
+        max-width: 100%;
+      }
+
+      .maly-hero-subtitle {
+        font-size: 0.92rem;
+        line-height: 1.35;
+        margin-bottom: 0.75rem;
+        text-align: left;
+        white-space: normal !important;
+        word-break: break-word !important;
+        max-width: 100%;
+      }
+
+      .maly-hero-summary {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        text-align: left;
+        max-width: 100%;
+        word-break: break-word;
+      }
+
+      .maly-hero-specs {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0.65rem 0.75rem;
+        margin-bottom: 1.15rem;
+        box-sizing: border-box !important;
+        text-align: left;
+      }
+
+      .maly-spec-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.15rem;
+        font-size: 0.8rem;
+        width: 100% !important;
+        max-width: 100% !important;
+        word-break: break-word !important;
+      }
+
+      .maly-spec-val {
+        width: 100% !important;
+        max-width: 100% !important;
+        word-break: break-word !important;
+      }
+
+      .maly-action-row {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: stretch !important;
+        box-sizing: border-box !important;
+      }
+
+      .maly-action-row .maly-btn-ink,
+      .maly-action-row .maly-btn-outline {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center;
+        justify-content: center;
+        min-height: 44px;
+        font-size: 0.88rem;
+        box-sizing: border-box !important;
+        white-space: normal !important;
+      }
+
+      .maly-hero-media {
+        padding: 0.5rem 0 !important;
+        min-height: auto !important;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .maly-portrait-wrapper {
+        max-width: 200px !important;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .maly-portrait-img {
+        width: 100%;
+        max-width: 200px;
+        box-shadow: 6px 6px 0px var(--maly-ink);
+      }
+
       .maly-floating-badge {
-        display: none !important
+        display: none !important;
+      }
+
+      .maly-mobile-badge-row {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        justify-content: center;
+        margin-top: 1rem;
+        width: 100%;
+      }
+
+      .maly-mobile-chip {
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 0.3rem 0.6rem;
+        background: var(--maly-paper);
+        border: 1.5px solid var(--maly-ink);
+        border-radius: 999px;
+        box-shadow: 2px 2px 0px var(--maly-ink);
+        color: var(--maly-ink);
+        white-space: nowrap;
+      }
+
+      .maly-chapter-section {
+        padding: 1.25rem 0.65rem !important;
+      }
+
+      .maly-chapter-header {
+        margin-bottom: 1.25rem;
+      }
+
+      .maly-chapter-title {
+        font-size: clamp(1.4rem, 5.5vw, 1.8rem) !important;
+      }
+
+      .maly-bio-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+      }
+
+      .maly-projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+
+      .maly-project-card {
+        padding: 1.25rem 0.85rem !important;
+        box-shadow: 5px 5px 0px var(--maly-ink) !important;
+      }
+
+      .maly-skills-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+      }
+
+      .maly-skill-cluster {
+        padding: 1.25rem 0.85rem !important;
+      }
+
+      .maly-timeline-item {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 1.35rem 1rem !important;
+        box-shadow: 5px 5px 0px var(--maly-ink) !important;
+      }
+
+      .maly-timeline-meta {
+        border-right: none !important;
+        border-bottom: 2px solid var(--maly-border) !important;
+        padding-right: 0 !important;
+        padding-bottom: 0.65rem !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+
+      .maly-timeline-date {
+        font-size: 1.1rem !important;
+      }
+
+      .maly-timeline-loc {
+        margin-top: 0 !important;
+        font-size: 0.78rem !important;
+      }
+
+      .maly-timeline-body h3 {
+        font-size: 1.25rem !important;
+        line-height: 1.3;
+      }
+
+      .maly-timeline-body h4 {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      .maly-timeline-body p {
+        font-size: 0.85rem !important;
+        line-height: 1.65;
+      }
+
+      .maly-timeline-highlights {
+        margin-top: 0.75rem !important;
+        padding-left: 1.1rem !important;
+        font-size: 0.82rem !important;
+        line-height: 1.65 !important;
+      }
+
+      .maly-contact-spread {
+        grid-template-columns: 1fr !important;
+        padding: 1.25rem 0.85rem !important;
+        box-shadow: 5px 5px 0px var(--maly-ink) !important;
+      }
+
+      .project-modal-backdrop {
+        padding: 0.75rem;
+      }
+
+      .project-modal-dialog {
+        padding: 1.5rem 1rem;
+        max-height: 90vh;
+        border-radius: 12px;
+      }
+
+      .modal-title {
+        font-size: 1.4rem !important;
+      }
+
+      .modal-action-row {
+        flex-direction: column;
+        gap: 0.65rem;
+        width: 100%;
+      }
+
+      .modal-action-row > * {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        min-height: 44px;
+        box-sizing: border-box;
+      }
+
+      .toast-notification {
+        left: 0.75rem;
+        right: 0.75rem;
+        transform: none;
+        max-width: calc(100vw - 1.5rem);
+        bottom: 0.75rem;
+        font-size: 0.8rem;
+        padding: 0.65rem 0.9rem;
       }
     }
   </style>
@@ -2347,11 +2787,11 @@
           <span class="maly-logo-title">ANILKUMAR R. JAISWAR</span>
           <span class="maly-logo-sub">Sr. Android Developer | 8+ Years | Banking &amp; Fintech Specialist</span>
         </div>
-        <nav>
+        <nav class="maly-nav-container">
           <ul class="maly-nav-chapters">
             <li><a href="#part-01" class="maly-nav-link">SUMMARY</a></li>
-            <li><a href="#part-02" class="maly-nav-link">BANKING APPS</a></li>
-            <li><a href="#part-03" class="maly-nav-link">SKILLS &amp; SECURITY</a></li>
+            <li><a href="#part-02" class="maly-nav-link"><span class="maly-nav-full">BANKING </span>APPS</a></li>
+            <li><a href="#part-03" class="maly-nav-link">SKILLS<span class="maly-nav-full"> &amp; SECURITY</span></a></li>
             <li><a href="#part-04" class="maly-nav-link">EXPERIENCE</a></li>
             <li><a href="#part-05" class="maly-nav-link">CONTACT</a></li>
           </ul>
@@ -2415,6 +2855,14 @@
                   <div class="maly-floating-badge star-point-lower-left">✦ Banking &amp; Fintech</div>
                   <div class="maly-floating-badge star-point-upper-right">🏛️ Clean &amp; MVVM</div>
                   <div class="maly-floating-badge star-point-lower-right">📱 Millions of Users</div>
+                </div>
+                <!-- Clean Chip Row for Mobile Display -->
+                <div class="maly-mobile-badge-row">
+                  <span class="maly-mobile-chip">🛡️ VAPT &amp; Security</span>
+                  <span class="maly-mobile-chip">⚡ 8+ Years Exp</span>
+                  <span class="maly-mobile-chip">✦ Banking &amp; Fintech</span>
+                  <span class="maly-mobile-chip">🏛️ Clean &amp; MVVM</span>
+                  <span class="maly-mobile-chip">📱 Millions of Users</span>
                 </div>
               </div>
             </div>
@@ -2825,7 +3273,6 @@
                   performance-first engineering, and complex SDK orchestrations. Managing 10+ major banking client
                   deliveries simultaneously with a focus on security-first development and high-performance delivery.
                 </p>
-
               </div>
             </div>
 
@@ -2837,18 +3284,11 @@
               <div class="maly-timeline-body">
                 <h3>RSalesArm IT Services Pvt. Ltd.</h3>
                 <h4>Mobile Application Developer — RSalesArm IT Services Pvt. Ltd.</h4>
-
-
-                <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
-                  <li style="margin-bottom:0.5rem;">Developed in-house apps (Royce, Tuneem Pro) featuring multimedia
-                    streaming (audio/video/image capture and playback), social interactions (comments, likes), event
-                    tracking, interactive quizzes, and an automated attendance system.</li>
-                  <li style="margin-bottom:0.5rem;">Alkem Laboratories — Alkepedia (10K+ Downloads): Feature development
-                    and maintenance.</li>
-                  <li style="margin-bottom:0.5rem;">Reckitt Benckiser — RBF3 (Internal Training App): Feature
-                    development and maintenance.</li>
+                <ul class="maly-timeline-highlights">
+                  <li>Developed in-house apps (Royce, Tuneem Pro) featuring multimedia streaming (audio/video/image capture and playback), social interactions (comments, likes), event tracking, interactive quizzes, and an automated attendance system.</li>
+                  <li>Alkem Laboratories — Alkepedia (10K+ Downloads): Feature development and maintenance.</li>
+                  <li>Reckitt Benckiser — RBF3 (Internal Training App): Feature development and maintenance.</li>
                 </ul>
-
               </div>
             </div>
 
@@ -2860,17 +3300,10 @@
               <div class="maly-timeline-body">
                 <h3>Clear Secured Services Pvt. Ltd.</h3>
                 <h4>Software Developer — Clear Secured Services Pvt. Ltd.</h4>
-
-
-                <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
-                  <li style="margin-bottom:0.5rem;">Contributed to the development and delivery of enterprise Android
-                    applications, including Fencer Audit (auditing mobile app), Fencer Telecom (internal enterprise
-                    mobile app), and Cleartask (home services mobile app).</li>
-                  <li style="margin-bottom:0.5rem;">Collaborated with cross-functional teams throughout the development
-                    lifecycle, contributing to requirement understanding, implementation, testing, and Play Store
-                    deployment.</li>
+                <ul class="maly-timeline-highlights">
+                  <li>Contributed to the development and delivery of enterprise Android applications, including Fencer Audit (auditing mobile app), Fencer Telecom (internal enterprise mobile app), and Cleartask (home services mobile app).</li>
+                  <li>Collaborated with cross-functional teams throughout the development lifecycle, contributing to requirement understanding, implementation, testing, and Play Store deployment.</li>
                 </ul>
-
               </div>
             </div>
 
@@ -2882,11 +3315,8 @@
               <div class="maly-timeline-body">
                 <h3>Independent / Startup work</h3>
                 <h4>Independent / Startup work — Built 5+ applications across multiple domains</h4>
-
-
               </div>
             </div>
-
 
             <div class="maly-timeline-item" style="border-left: 6px solid var(--maly-yellow);">
               <div class="maly-timeline-meta">
@@ -2896,7 +3326,6 @@
               <div class="maly-timeline-body">
                 <h3>Mumbai University</h3>
                 <h4>B.Sc. Information Technology</h4>
-                <p></p>
               </div>
             </div>
           </div>

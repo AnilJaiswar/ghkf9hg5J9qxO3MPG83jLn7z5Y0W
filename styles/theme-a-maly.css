@@ -208,6 +208,10 @@
   transition: transform 0.2s ease;
 }
 
+.maly-nav-full {
+  display: inline;
+}
+
 .maly-nav-link:hover::after {
   transform: scaleX(1);
 }
@@ -289,7 +293,7 @@
   color: var(--maly-blue);
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
-  white-space: nowrap;
+  word-break: break-word;
 }
 
 .maly-hero-summary {
@@ -503,6 +507,11 @@
   box-shadow: 3.5px 3.5px 0px #000000 !important;
 }
 
+.maly-mobile-badge-row {
+  display: none;
+}
+
+
 .maly-action-row {
   display: flex;
   justify-content: flex-start;
@@ -661,7 +670,7 @@
 /* Part 02: High-Stakes Banking Dossiers */
 .maly-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
   gap: 2.5rem;
 }
 
@@ -760,7 +769,7 @@
 /* Part 03: Security Manuscript */
 .maly-skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 2rem;
 }
 
@@ -857,10 +866,59 @@
   margin-bottom: 1rem;
 }
 
+.maly-chapter-section {
+  scroll-margin-top: 5.5rem;
+}
+
 .maly-timeline-body p {
   font-size: 0.88rem;
   line-height: 1.7;
   color: var(--maly-ink-muted);
+}
+
+.maly-timeline-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0.85rem 0;
+}
+
+.maly-timeline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  background: var(--maly-bg-subtle);
+  border: 1.5px solid var(--maly-ink);
+  color: var(--maly-ink);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px var(--maly-ink);
+  white-space: nowrap;
+}
+
+[data-theme-mode="dark"] .maly-timeline-pill {
+  background: #1e1e1a;
+  border-color: #383830;
+  color: #f4efe4;
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.maly-timeline-highlights {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.maly-timeline-highlights li {
+  margin-bottom: 0.5rem;
+  color: var(--maly-ink);
+}
+
+.maly-timeline-highlights li::marker {
+  color: var(--maly-blue);
 }
 
 /* Part 05: Colophon & Dialogue */
@@ -953,7 +1011,6 @@
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-
   .maly-hero-grid,
   .maly-bio-grid,
   .maly-timeline-item,
@@ -1004,7 +1061,346 @@
 }
 
 @media (max-width: 768px) {
+  .maly-masthead {
+    padding: 0.65rem 0.85rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .maly-logo-group {
+    padding-right: 110px;
+    max-width: calc(100% - 110px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .maly-logo-title {
+    font-size: clamp(0.78rem, 3.8vw, 0.95rem);
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    font-weight: 800;
+  }
+
+  .maly-logo-sub {
+    font-size: clamp(0.58rem, 2.5vw, 0.63rem);
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+    white-space: normal;
+    overflow: visible;
+    color: var(--maly-ink-muted);
+    margin-top: 2px;
+  }
+
+  .maly-nav-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.2rem 0;
+  }
+
+  .maly-nav-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .maly-nav-full {
+    display: none;
+  }
+
+  .maly-nav-chapters {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 0.25rem !important;
+    padding: 0.1rem 0;
+    width: 100% !important;
+  }
+
+  .maly-nav-chapters li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .maly-nav-link {
+    display: block !important;
+    font-size: 0.64rem !important;
+    padding: 0.25rem 0.25rem !important;
+    background: var(--maly-paper);
+    border: 1.5px solid var(--maly-ink);
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px var(--maly-ink);
+    white-space: nowrap;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .maly-hero-spread {
+    padding: 0.85rem 0.65rem 1.75rem 0.65rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .maly-spread-frame {
+    padding: 1.25rem 0.85rem !important;
+    box-shadow: 4px 4px 0px var(--maly-ink) !important;
+    border-radius: 6px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .maly-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .maly-hero-content {
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .maly-hero-eyebrow {
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+  }
+
+  .maly-hero-title {
+    font-size: clamp(1.5rem, 6.5vw, 2rem) !important;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    word-break: break-word;
+    margin-bottom: 0.35rem;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .maly-hero-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.35;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 100%;
+  }
+
+  .maly-hero-summary {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: left;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  .maly-hero-specs {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.65rem 0.75rem;
+    margin-bottom: 1.15rem;
+    box-sizing: border-box !important;
+    text-align: left;
+  }
+
+  .maly-spec-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    font-size: 0.8rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
+
+  .maly-spec-val {
+    width: 100% !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
+
+  .maly-action-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: stretch !important;
+    box-sizing: border-box !important;
+  }
+
+  .maly-action-row .maly-btn-ink,
+  .maly-action-row .maly-btn-outline {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 0.88rem;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+  }
+
+  .maly-hero-media {
+    padding: 0.5rem 0 !important;
+    min-height: auto !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .maly-portrait-wrapper {
+    max-width: 200px !important;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .maly-portrait-img {
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 6px 6px 0px var(--maly-ink);
+  }
+
   .maly-floating-badge {
     display: none !important;
+  }
+
+  .maly-mobile-badge-row {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .maly-mobile-chip {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    background: var(--maly-paper);
+    border: 1.5px solid var(--maly-ink);
+    border-radius: 999px;
+    box-shadow: 2px 2px 0px var(--maly-ink);
+    color: var(--maly-ink);
+    white-space: nowrap;
+  }
+
+  .maly-chapter-section {
+    padding: 1.25rem 0.65rem !important;
+  }
+
+  .maly-chapter-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .maly-chapter-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.8rem) !important;
+  }
+
+  .maly-bio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+
+  .maly-projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .maly-project-card {
+    padding: 1.25rem 0.85rem !important;
+    box-shadow: 5px 5px 0px var(--maly-ink) !important;
+  }
+
+  .maly-skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .maly-skill-cluster {
+    padding: 1.25rem 0.85rem !important;
+  }
+
+  .maly-timeline-item {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 1.35rem 1rem !important;
+    box-shadow: 5px 5px 0px var(--maly-ink) !important;
+  }
+
+  .maly-timeline-meta {
+    border-right: none !important;
+    border-bottom: 2px solid var(--maly-border) !important;
+    padding-right: 0 !important;
+    padding-bottom: 0.65rem !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .maly-timeline-date {
+    font-size: 1.1rem !important;
+  }
+
+  .maly-timeline-loc {
+    margin-top: 0 !important;
+    font-size: 0.78rem !important;
+  }
+
+  .maly-timeline-body h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.3;
+  }
+
+  .maly-timeline-body h4 {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .maly-timeline-body p {
+    font-size: 0.85rem !important;
+    line-height: 1.65;
+  }
+
+  .maly-timeline-highlights {
+    margin-top: 0.75rem !important;
+    padding-left: 1.1rem !important;
+    font-size: 0.82rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .maly-contact-spread {
+    grid-template-columns: 1fr !important;
+    padding: 1.25rem 0.85rem !important;
+    box-shadow: 5px 5px 0px var(--maly-ink) !important;
   }
 }

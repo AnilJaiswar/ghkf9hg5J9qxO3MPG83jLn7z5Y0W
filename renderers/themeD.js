@@ -20,13 +20,13 @@ export function renderThemeD(data, container, utils) {
       <header class="bio-navbar">
         <a href="#bio-hero" class="bio-brand">
           <span class="bio-brand-icon">🌱</span>
-          <div>
+          <div class="bio-brand-text">
             <div class="bio-brand-title">${basics.name}</div>
             <div class="bio-brand-sub">${basics.label}</div>
           </div>
         </a>
 
-        <nav>
+        <nav class="bio-nav-container">
           <ul class="bio-nav-links">
             <li><a href="#bio-hero" class="bio-nav-link">Overview</a></li>
             <li><a href="#bio-about" class="bio-nav-link">Summary</a></li>
@@ -37,7 +37,7 @@ export function renderThemeD(data, container, utils) {
           </ul>
         </nav>
 
-        <div>
+        <div class="bio-header-action">
           <a href="#bio-contact" class="bio-btn-leaf" style="padding:0.45rem 1.15rem; font-size:0.82rem;">
             <span>Get in Touch</span>
           </a>

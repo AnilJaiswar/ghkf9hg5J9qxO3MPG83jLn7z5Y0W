@@ -210,27 +210,27 @@
   color: #475569;
 }
 
-/* Header Clearance Utility across all themes so header items NEVER overlap with top-right widget */
-.maly-masthead,
-.glass-header-nav,
-.bio-navbar,
-.swiss-top-rail {
-  padding-right: 250px !important;
+/* Header Clearance Utility across desktop layouts so header items do not overlap top-right hub */
+@media (min-width: 901px) {
+  .maly-masthead,
+  .bio-navbar,
+  .swiss-top-rail {
+    padding-right: 220px !important;
+  }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 769px) {
   .maly-masthead,
-  .glass-header-nav,
   .bio-navbar,
   .swiss-top-rail {
     padding-right: 170px !important;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .theme-compact-hub {
-    top: 0.4rem;
-    right: 0.4rem;
+    top: 0.35rem;
+    right: 0.35rem;
   }
   .theme-dropdown-trigger {
     min-height: 36px;
@@ -241,10 +241,14 @@
   .theme-dropdown-label {
     display: none;
   }
+  .theme-menu-popover {
+    width: min(260px, calc(100vw - 1rem));
+    right: 0;
+  }
+  /* On mobile <= 768px, headers use their own natural padding with brand clearance */
   .maly-masthead,
-  .glass-header-nav,
   .bio-navbar,
   .swiss-top-rail {
-    padding-right: 120px !important;
+    padding-right: 0.85rem !important;
   }
 }

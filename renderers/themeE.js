@@ -11,10 +11,10 @@ export function renderThemeE(data, container, utils) {
         <div class="swiss-brand-mark">
           <span class="swiss-logo-text">${basics.name.toUpperCase()}</span>
           <span class="swiss-index-code">[EXPERIENCE: 2016–2026]</span>
-          <span style="font-size:0.85rem; font-weight:700;">${basics.label}</span>
+          <span class="swiss-header-label" style="font-size:0.85rem; font-weight:700;">${basics.label}</span>
         </div>
 
-        <nav>
+        <nav class="swiss-nav-container">
           <ul class="swiss-nav-coords">
             <li class="swiss-nav-item"><a href="#swiss-overview">[01 / SUMMARY]</a></li>
             <li class="swiss-nav-item"><a href="#swiss-blueprints">[02 / BANKING]</a></li>
@@ -24,7 +24,7 @@ export function renderThemeE(data, container, utils) {
           </ul>
         </nav>
 
-        <div>
+        <div class="swiss-header-action">
           <button id="swiss-cv-btn" class="swiss-btn-dispatch" style="padding:0.4rem 1rem; font-size:0.75rem;">
             DOWNLOAD RESUME ↓
           </button>
@@ -75,6 +75,12 @@ export function renderThemeE(data, container, utils) {
                 <span class="swiss-spec-label">CORE FOCUS</span>
                 <span class="swiss-spec-value">VAPT REMEDIATION & BANKING APPS</span>
               </div>
+            </div>
+
+            <div class="swiss-hero-action-row">
+              <button id="swiss-hero-cv-btn" class="swiss-btn-dispatch" style="padding:0.6rem 1.25rem; font-size:0.82rem;">
+                DOWNLOAD RESUME ↓
+              </button>
             </div>
           </div>
 
@@ -170,19 +176,19 @@ export function renderThemeE(data, container, utils) {
             </div>
           </div>
 
-          <div style="padding:3.5rem;">
+          <div class="swiss-chronology-container">
             ${work.map(job => `
-              <div style="border-bottom:1px solid var(--swiss-border); padding:2rem 0; display:grid; grid-template-columns:250px 1fr; gap:2.5rem;">
-                <div style="font-family:var(--swiss-font-mono);">
-                  <div style="font-size:1.1rem; font-weight:700;">${job.period}</div>
-                  <div style="font-size:0.8rem; color:var(--swiss-text-muted);">${job.location}</div>
+              <div class="swiss-job-item">
+                <div class="swiss-job-meta">
+                  <div class="swiss-job-period">${job.period}</div>
+                  <div class="swiss-job-loc">${job.location}</div>
                 </div>
-                <div>
-                  <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.35rem;">${job.company}</h3>
-                  <div style="font-family:var(--swiss-font-mono); font-size:0.9rem; margin-bottom:1rem; opacity:0.8;">${job.position}</div>
-                  ${job.summary ? `<p style="font-size:0.95rem; line-height:1.7; color:var(--swiss-text-muted); margin-bottom:1rem;">${job.summary}</p>` : ''}
+                <div class="swiss-job-details">
+                  <h3 class="swiss-job-title">${job.company}</h3>
+                  <div class="swiss-job-role">${job.position}</div>
+                  ${job.summary ? `<p class="swiss-job-summary">${job.summary}</p>` : ''}
                   ${job.highlights && job.highlights.length > 0 ? `
-                    <ul style="padding-left:1.25rem; font-size:0.9rem; line-height:1.7; color:var(--swiss-text-muted); margin-bottom:1rem;">
+                    <ul class="swiss-job-highlights">
                       ${job.highlights.map(h => `<li>${h}</li>`).join('')}
                     </ul>
                   ` : ''}
@@ -191,15 +197,15 @@ export function renderThemeE(data, container, utils) {
             `).join('')}
 
             <!-- Education Entry -->
-            <div style="padding:2rem 0; display:grid; grid-template-columns:250px 1fr; gap:2.5rem;">
-              <div style="font-family:var(--swiss-font-mono);">
-                <div style="font-size:1.1rem; font-weight:700;">Graduated 2015</div>
-                <div style="font-size:0.8rem; color:var(--swiss-text-muted);">${education[0].location}</div>
+            <div class="swiss-job-item swiss-edu-item">
+              <div class="swiss-job-meta">
+                <div class="swiss-job-period">Graduated 2015</div>
+                <div class="swiss-job-loc">${education[0].location}</div>
               </div>
-              <div>
-                <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.35rem;">${education[0].institution}</h3>
-                <div style="font-family:var(--swiss-font-mono); font-size:0.9rem; margin-bottom:0.5rem; opacity:0.8;">${education[0].degree}</div>
-                <p style="font-size:0.95rem; line-height:1.7; color:var(--swiss-text-muted);">${education[0].summary}</p>
+              <div class="swiss-job-details">
+                <h3 class="swiss-job-title">${education[0].institution}</h3>
+                <div class="swiss-job-role">${education[0].degree}</div>
+                <p class="swiss-job-summary">${education[0].summary}</p>
               </div>
             </div>
           </div>
@@ -279,6 +285,13 @@ export function renderThemeE(data, container, utils) {
   const cvBtn = container.querySelector('#swiss-cv-btn');
   if (cvBtn) {
     cvBtn.addEventListener('click', () => {
+      utils.playSound('pop');
+      utils.triggerDownloadCV();
+    });
+  }
+  const heroCvBtn = container.querySelector('#swiss-hero-cv-btn');
+  if (heroCvBtn) {
+    heroCvBtn.addEventListener('click', () => {
       utils.playSound('pop');
       utils.triggerDownloadCV();
     });

@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 // STANDALONE APPLICATION BUNDLE FOR ANILKUMAR R. JAISWAR PORTFOLIO
 // Compatible with both file:/// (local double-click) and http:// (web server)
 // 100% Genuine User Content â€¢ 3 Active Themes â€¢ Compact Top-Right Hub
@@ -378,6 +378,8 @@ const portfolioData = {
 
   document.documentElement.setAttribute('data-theme-mode', activeThemeMode);
   document.body.setAttribute('data-theme-mode', activeThemeMode);
+  const initialContainer = document.querySelector('[data-mode]');
+  if (initialContainer) initialContainer.setAttribute('data-mode', activeThemeMode);
 
   // 3. SOUND SYNTHESIZER
   let audioCtx = null;
@@ -590,11 +592,11 @@ function renderThemeA(data, container, utils) {
           <span class="maly-logo-title">${basics.name.toUpperCase()}</span>
           <span class="maly-logo-sub">${basics.label}</span>
         </div>
-        <nav>
+        <nav class="maly-nav-container">
           <ul class="maly-nav-chapters">
             <li><a href="#part-01" class="maly-nav-link">SUMMARY</a></li>
-            <li><a href="#part-02" class="maly-nav-link">BANKING APPS</a></li>
-            <li><a href="#part-03" class="maly-nav-link">SKILLS & SECURITY</a></li>
+            <li><a href="#part-02" class="maly-nav-link"><span class="maly-nav-full">BANKING </span>APPS</a></li>
+            <li><a href="#part-03" class="maly-nav-link">SKILLS<span class="maly-nav-full"> &amp; SECURITY</span></a></li>
             <li><a href="#part-04" class="maly-nav-link">EXPERIENCE</a></li>
             <li><a href="#part-05" class="maly-nav-link">CONTACT</a></li>
           </ul>
@@ -653,12 +655,20 @@ function renderThemeA(data, container, utils) {
                        height="640"
                        fetchpriority="high"
                        decoding="async">
-                  <!-- 5 Floating Badges in Star-Like Adjustment Around Image -->
+                  <!-- 5 Floating Badges in Star-Like Adjustment Around Image (Desktop) -->
                   <div class="maly-floating-badge star-point-top">🛡️ VAPT & Security</div>
                   <div class="maly-floating-badge star-point-upper-left">⚡ 8+ Years Exp</div>
                   <div class="maly-floating-badge star-point-lower-left">✦ Banking & Fintech</div>
                   <div class="maly-floating-badge star-point-upper-right">🏛️ Clean & MVVM</div>
                   <div class="maly-floating-badge star-point-lower-right">📱 Millions of Users</div>
+                </div>
+                <!-- Clean Chip Row for Mobile Display -->
+                <div class="maly-mobile-badge-row">
+                  <span class="maly-mobile-chip">🛡️ VAPT &amp; Security</span>
+                  <span class="maly-mobile-chip">⚡ 8+ Years Exp</span>
+                  <span class="maly-mobile-chip">✦ Banking &amp; Fintech</span>
+                  <span class="maly-mobile-chip">🏛️ Clean &amp; MVVM</span>
+                  <span class="maly-mobile-chip">📱 Millions of Users</span>
                 </div>
               </div>
             </div>
@@ -785,8 +795,8 @@ function renderThemeA(data, container, utils) {
                   <h4>${job.position}</h4>
                   ${job.summary ? `<p>${job.summary}</p>` : ''}
                   ${job.highlights && job.highlights.length > 0 ? `
-                    <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
-                      ${job.highlights.map(h => `<li style="margin-bottom:0.5rem;">${h}</li>`).join('')}
+                    <ul class="maly-timeline-highlights">
+                      ${job.highlights.map(h => `<li>${h}</li>`).join('')}
                     </ul>
                   ` : ''}
                 </div>
@@ -801,7 +811,7 @@ function renderThemeA(data, container, utils) {
               <div class="maly-timeline-body">
                 <h3>${education[0].institution}</h3>
                 <h4>${education[0].degree}</h4>
-                <p>${education[0].summary}</p>
+                ${education[0].summary ? `<p>${education[0].summary}</p>` : ''}
               </div>
             </div>
           </div>
@@ -909,13 +919,13 @@ function renderThemeD(data, container, utils) {
       <header class="bio-navbar">
         <a href="#bio-hero" class="bio-brand">
           <span class="bio-brand-icon">🌱</span>
-          <div>
+          <div class="bio-brand-text">
             <div class="bio-brand-title">${basics.name}</div>
             <div class="bio-brand-sub">${basics.label}</div>
           </div>
         </a>
 
-        <nav>
+        <nav class="bio-nav-container">
           <ul class="bio-nav-links">
             <li><a href="#bio-hero" class="bio-nav-link">Overview</a></li>
             <li><a href="#bio-about" class="bio-nav-link">Summary</a></li>
@@ -926,7 +936,7 @@ function renderThemeD(data, container, utils) {
           </ul>
         </nav>
 
-        <div>
+        <div class="bio-header-action">
           <a href="#bio-contact" class="bio-btn-leaf" style="padding:0.45rem 1.15rem; font-size:0.82rem;">
             <span>Get in Touch</span>
           </a>
@@ -1245,10 +1255,10 @@ function renderThemeE(data, container, utils) {
         <div class="swiss-brand-mark">
           <span class="swiss-logo-text">${basics.name.toUpperCase()}</span>
           <span class="swiss-index-code">[EXPERIENCE: 2016–2026]</span>
-          <span style="font-size:0.85rem; font-weight:700;">${basics.label}</span>
+          <span class="swiss-header-label" style="font-size:0.85rem; font-weight:700;">${basics.label}</span>
         </div>
 
-        <nav>
+        <nav class="swiss-nav-container">
           <ul class="swiss-nav-coords">
             <li class="swiss-nav-item"><a href="#swiss-overview">[01 / SUMMARY]</a></li>
             <li class="swiss-nav-item"><a href="#swiss-blueprints">[02 / BANKING]</a></li>
@@ -1258,7 +1268,7 @@ function renderThemeE(data, container, utils) {
           </ul>
         </nav>
 
-        <div>
+        <div class="swiss-header-action">
           <button id="swiss-cv-btn" class="swiss-btn-dispatch" style="padding:0.4rem 1rem; font-size:0.75rem;">
             DOWNLOAD RESUME ↓
           </button>
@@ -1309,6 +1319,12 @@ function renderThemeE(data, container, utils) {
                 <span class="swiss-spec-label">CORE FOCUS</span>
                 <span class="swiss-spec-value">VAPT REMEDIATION & BANKING APPS</span>
               </div>
+            </div>
+
+            <div class="swiss-hero-action-row">
+              <button id="swiss-hero-cv-btn" class="swiss-btn-dispatch" style="padding:0.6rem 1.25rem; font-size:0.82rem;">
+                DOWNLOAD RESUME ↓
+              </button>
             </div>
           </div>
 
@@ -1404,19 +1420,19 @@ function renderThemeE(data, container, utils) {
             </div>
           </div>
 
-          <div style="padding:3.5rem;">
+          <div class="swiss-chronology-container">
             ${work.map(job => `
-              <div style="border-bottom:1px solid var(--swiss-border); padding:2rem 0; display:grid; grid-template-columns:250px 1fr; gap:2.5rem;">
-                <div style="font-family:var(--swiss-font-mono);">
-                  <div style="font-size:1.1rem; font-weight:700;">${job.period}</div>
-                  <div style="font-size:0.8rem; color:var(--swiss-text-muted);">${job.location}</div>
+              <div class="swiss-job-item">
+                <div class="swiss-job-meta">
+                  <div class="swiss-job-period">${job.period}</div>
+                  <div class="swiss-job-loc">${job.location}</div>
                 </div>
-                <div>
-                  <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.35rem;">${job.company}</h3>
-                  <div style="font-family:var(--swiss-font-mono); font-size:0.9rem; margin-bottom:1rem; opacity:0.8;">${job.position}</div>
-                  ${job.summary ? `<p style="font-size:0.95rem; line-height:1.7; color:var(--swiss-text-muted); margin-bottom:1rem;">${job.summary}</p>` : ''}
+                <div class="swiss-job-details">
+                  <h3 class="swiss-job-title">${job.company}</h3>
+                  <div class="swiss-job-role">${job.position}</div>
+                  ${job.summary ? `<p class="swiss-job-summary">${job.summary}</p>` : ''}
                   ${job.highlights && job.highlights.length > 0 ? `
-                    <ul style="padding-left:1.25rem; font-size:0.9rem; line-height:1.7; color:var(--swiss-text-muted); margin-bottom:1rem;">
+                    <ul class="swiss-job-highlights">
                       ${job.highlights.map(h => `<li>${h}</li>`).join('')}
                     </ul>
                   ` : ''}
@@ -1425,15 +1441,15 @@ function renderThemeE(data, container, utils) {
             `).join('')}
 
             <!-- Education Entry -->
-            <div style="padding:2rem 0; display:grid; grid-template-columns:250px 1fr; gap:2.5rem;">
-              <div style="font-family:var(--swiss-font-mono);">
-                <div style="font-size:1.1rem; font-weight:700;">Graduated 2015</div>
-                <div style="font-size:0.8rem; color:var(--swiss-text-muted);">${education[0].location}</div>
+            <div class="swiss-job-item swiss-edu-item">
+              <div class="swiss-job-meta">
+                <div class="swiss-job-period">Graduated 2015</div>
+                <div class="swiss-job-loc">${education[0].location}</div>
               </div>
-              <div>
-                <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.35rem;">${education[0].institution}</h3>
-                <div style="font-family:var(--swiss-font-mono); font-size:0.9rem; margin-bottom:0.5rem; opacity:0.8;">${education[0].degree}</div>
-                <p style="font-size:0.95rem; line-height:1.7; color:var(--swiss-text-muted);">${education[0].summary}</p>
+              <div class="swiss-job-details">
+                <h3 class="swiss-job-title">${education[0].institution}</h3>
+                <div class="swiss-job-role">${education[0].degree}</div>
+                <p class="swiss-job-summary">${education[0].summary}</p>
               </div>
             </div>
           </div>
@@ -1513,6 +1529,13 @@ function renderThemeE(data, container, utils) {
   const cvBtn = container.querySelector('#swiss-cv-btn');
   if (cvBtn) {
     cvBtn.addEventListener('click', () => {
+      utils.playSound('pop');
+      utils.triggerDownloadCV();
+    });
+  }
+  const heroCvBtn = container.querySelector('#swiss-hero-cv-btn');
+  if (heroCvBtn) {
+    heroCvBtn.addEventListener('click', () => {
       utils.playSound('pop');
       utils.triggerDownloadCV();
     });
@@ -1618,6 +1641,8 @@ function renderThemeE(data, container, utils) {
         if (copyEmailBtn) copyEmailBtn.addEventListener('click', () => { window.appUtils.copyToClipboard(basics.email, 'Email copied to clipboard!'); });
         const copyPhoneBtn = appContainer.querySelector('#maly-copy-phone');
         if (copyPhoneBtn) copyPhoneBtn.addEventListener('click', () => { window.appUtils.copyToClipboard(basics.phone, 'Phone number copied to clipboard!'); });
+        const themeAEl = appContainer.querySelector('.theme-a-container');
+        if (themeAEl) themeAEl.setAttribute('data-mode', activeThemeMode);
         updateThemeUI(newThemeId);
         return;
       }
@@ -1693,7 +1718,7 @@ function renderThemeE(data, container, utils) {
 
     updateModeButtonUI();
     playSound('mode');
-    showToast(`${activeThemeMode === 'dark' ? 'ðŸŒ™ Dark Mode' : 'â˜€ï¸ Light Mode'} Activated`);
+    showToast((activeThemeMode === "dark" ? "ðŸŒ™ Dark Mode" : "â˜€ï¸ Light Mode") + " Activated");
   }
 
   function updateModeButtonUI() {
@@ -1762,7 +1787,7 @@ function renderThemeE(data, container, utils) {
         isSoundEnabled = !isSoundEnabled;
         localStorage.setItem('anil_portfolio_sound', isSoundEnabled.toString());
         soundBtn.classList.toggle('active', isSoundEnabled);
-        showToast(isSoundEnabled ? 'ðŸ”Š Sound effects on' : 'ðŸ”‡ Sound effects muted');
+        showToast(isSoundEnabled ? "ðŸ”Š Sound effects on" : "ðŸ”‡ Sound effects muted");
         if (isSoundEnabled) playSound('pop');
       });
     }

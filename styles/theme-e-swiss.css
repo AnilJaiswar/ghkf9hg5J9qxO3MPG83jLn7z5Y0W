@@ -453,15 +453,66 @@
   color: var(--swiss-black);
 }
 
+.swiss-chronology-container {
+  padding: 3.5rem;
+}
+
+.swiss-job-item {
+  border-bottom: 1px solid var(--swiss-border);
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2.5rem;
+}
+
+.swiss-job-meta {
+  font-family: var(--swiss-font-mono);
+}
+
+.swiss-job-period {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.swiss-job-loc {
+  font-size: 0.8rem;
+  color: var(--swiss-text-muted);
+}
+
+.swiss-job-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.swiss-job-role {
+  font-family: var(--swiss-font-mono);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.swiss-job-summary {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--swiss-text-muted);
+  margin-bottom: 1rem;
+}
+
+.swiss-job-highlights {
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--swiss-text-muted);
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 1024px) {
   .swiss-hero-spread, .swiss-projects-blueprint, .swiss-contact-grid {
     grid-template-columns: 1fr;
   }
   .swiss-skills-taxonomy {
     grid-template-columns: 1fr 1fr;
-  }
-  .swiss-nav-coords {
-    display: none;
   }
   .swiss-hero-left, .swiss-blueprint-item, .swiss-contact-left, .swiss-contact-right, .swiss-section-header {
     padding-left: 1.5rem;
@@ -471,3 +522,234 @@
     font-size: 2.75rem;
   }
 }
+
+@media (max-width: 768px) {
+  .swiss-top-rail {
+    padding: 0.65rem 0.85rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .swiss-brand-mark {
+    padding-right: 105px;
+    max-width: calc(100% - 105px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .swiss-logo-text {
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .swiss-index-code {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.35rem;
+    display: inline-block;
+  }
+
+  .swiss-header-label,
+  .swiss-header-action {
+    display: none !important;
+  }
+
+  .swiss-nav-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .swiss-nav-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .swiss-nav-coords {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0.35rem !important;
+    padding: 0.1rem 0;
+    width: max-content;
+  }
+
+  .swiss-nav-item a {
+    font-size: 0.68rem !important;
+    padding: 0.22rem 0.5rem !important;
+    background: var(--swiss-gray-light);
+    border: 1px solid var(--swiss-border);
+    white-space: nowrap;
+    font-family: var(--swiss-font-mono);
+    font-weight: 600;
+    color: var(--swiss-black);
+    display: inline-block;
+  }
+
+  [data-theme-mode="dark"] .swiss-nav-item a {
+    background: #1e222b;
+    border-color: #333a48;
+    color: #e2e8f0;
+  }
+
+  .swiss-hero-spread {
+    grid-template-columns: 1fr !important;
+  }
+
+  .swiss-hero-left {
+    padding: 1.5rem 0.85rem 1.75rem 0.85rem !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--swiss-border);
+  }
+
+  .swiss-dossier-tag {
+    font-size: 0.68rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .swiss-display-headline {
+    font-size: clamp(1.85rem, 7.5vw, 2.5rem) !important;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+    word-break: break-word;
+  }
+
+  .swiss-lead-paragraph {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .swiss-specs-table {
+    margin-bottom: 1.25rem;
+  }
+
+  .swiss-spec-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    padding: 0.5rem 0;
+  }
+
+  .swiss-spec-label {
+    font-size: 0.68rem;
+  }
+
+  .swiss-spec-value {
+    font-size: 0.82rem;
+    word-break: break-word;
+  }
+
+  .swiss-hero-action-row {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .swiss-hero-action-row .swiss-btn-dispatch {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .swiss-hero-right {
+    padding: 1.25rem 0.85rem !important;
+  }
+
+  .swiss-photo-container {
+    max-width: 100% !important;
+    width: 100%;
+  }
+
+  .swiss-mint-overlay-box {
+    position: static !important;
+    width: 100% !important;
+    border-top: none !important;
+    padding: 1rem 0.85rem !important;
+    box-sizing: border-box;
+  }
+
+  .swiss-section-header {
+    padding: 1.25rem 0.85rem !important;
+  }
+
+  .swiss-section-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
+  }
+
+  .swiss-projects-blueprint {
+    grid-template-columns: 1fr !important;
+  }
+
+  .swiss-blueprint-item {
+    padding: 1.25rem 0.85rem !important;
+  }
+
+  .swiss-blueprint-item:nth-child(odd) {
+    border-right: none !important;
+  }
+
+  .swiss-blueprint-title {
+    font-size: 1.35rem !important;
+  }
+
+  .swiss-metrics-blueprint {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .swiss-metric-cell {
+    padding: 1rem 0.75rem !important;
+  }
+
+  .swiss-metric-giant {
+    font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
+  }
+
+  .swiss-skills-taxonomy {
+    grid-template-columns: 1fr !important;
+  }
+
+  .swiss-tax-card {
+    padding: 1.25rem 0.85rem !important;
+  }
+
+  .swiss-contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .swiss-chronology-container {
+    padding: 1.25rem 0.85rem !important;
+  }
+
+  .swiss-job-item {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 1.5rem 0 !important;
+  }
+
+  .swiss-contact-left,
+  .swiss-contact-right {
+    padding: 1.25rem 0.85rem !important;
+    border-right: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .swiss-metrics-blueprint {
+    grid-template-columns: 1fr !important;
+  }
+}
+

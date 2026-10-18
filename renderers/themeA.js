@@ -1,4 +1,4 @@
-﻿// Theme A: Editorial Storybook Renderer (Artistic Illustrated Chapter Spreads)
+// Theme A: Editorial Storybook Renderer (Artistic Illustrated Chapter Spreads)
 // Inspired by Reference Image 1 (Editorial papyrus layout with 100% genuine content)
 
 export function renderThemeA(data, container, utils) {
@@ -12,11 +12,11 @@ export function renderThemeA(data, container, utils) {
           <span class="maly-logo-title">${basics.name.toUpperCase()}</span>
           <span class="maly-logo-sub">${basics.label}</span>
         </div>
-        <nav>
+        <nav class="maly-nav-container">
           <ul class="maly-nav-chapters">
             <li><a href="#part-01" class="maly-nav-link">SUMMARY</a></li>
-            <li><a href="#part-02" class="maly-nav-link">BANKING APPS</a></li>
-            <li><a href="#part-03" class="maly-nav-link">SKILLS & SECURITY</a></li>
+            <li><a href="#part-02" class="maly-nav-link"><span class="maly-nav-full">BANKING </span>APPS</a></li>
+            <li><a href="#part-03" class="maly-nav-link">SKILLS<span class="maly-nav-full"> &amp; SECURITY</span></a></li>
             <li><a href="#part-04" class="maly-nav-link">EXPERIENCE</a></li>
             <li><a href="#part-05" class="maly-nav-link">CONTACT</a></li>
           </ul>
@@ -75,12 +75,20 @@ export function renderThemeA(data, container, utils) {
                        height="640"
                        fetchpriority="high"
                        decoding="async">
-                  <!-- 5 Floating Badges in Star-Like Adjustment Around Image -->
+                  <!-- 5 Floating Badges in Star-Like Adjustment Around Image (Desktop) -->
                   <div class="maly-floating-badge star-point-top">🛡️ VAPT & Security</div>
                   <div class="maly-floating-badge star-point-upper-left">⚡ 8+ Years Exp</div>
                   <div class="maly-floating-badge star-point-lower-left">✦ Banking & Fintech</div>
                   <div class="maly-floating-badge star-point-upper-right">🏛️ Clean & MVVM</div>
                   <div class="maly-floating-badge star-point-lower-right">📱 Millions of Users</div>
+                </div>
+                <!-- Clean Chip Row for Mobile Display -->
+                <div class="maly-mobile-badge-row">
+                  <span class="maly-mobile-chip">🛡️ VAPT &amp; Security</span>
+                  <span class="maly-mobile-chip">⚡ 8+ Years Exp</span>
+                  <span class="maly-mobile-chip">✦ Banking &amp; Fintech</span>
+                  <span class="maly-mobile-chip">🏛️ Clean &amp; MVVM</span>
+                  <span class="maly-mobile-chip">📱 Millions of Users</span>
                 </div>
               </div>
             </div>
@@ -207,8 +215,8 @@ export function renderThemeA(data, container, utils) {
                   <h4>${job.position}</h4>
                   ${job.summary ? `<p>${job.summary}</p>` : ''}
                   ${job.highlights && job.highlights.length > 0 ? `
-                    <ul style="margin-top:1rem; padding-left:1.2rem; font-size:0.85rem; line-height:1.7;">
-                      ${job.highlights.map(h => `<li style="margin-bottom:0.5rem;">${h}</li>`).join('')}
+                    <ul class="maly-timeline-highlights">
+                      ${job.highlights.map(h => `<li>${h}</li>`).join('')}
                     </ul>
                   ` : ''}
                 </div>
@@ -223,7 +231,7 @@ export function renderThemeA(data, container, utils) {
               <div class="maly-timeline-body">
                 <h3>${education[0].institution}</h3>
                 <h4>${education[0].degree}</h4>
-                <p>${education[0].summary}</p>
+                ${education[0].summary ? `<p>${education[0].summary}</p>` : ''}
               </div>
             </div>
           </div>
