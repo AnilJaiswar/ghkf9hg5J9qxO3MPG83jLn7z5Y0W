@@ -20,7 +20,7 @@ export const portfolioData = {
       country: "India",
       display: "Mumbai, India"
     },
-    summary: "Senior Android Developer with 8+ years of experience architecting secure, scalable enterprise banking and fintech applications. Specialized in mobile architecture, end-to-end VAPT remediation, and complex SDK integrations across HDFC, IDBI, IndusInd, and Kotak Bank.",
+    summary: "Senior Android Developer (Sr. Android Developer / Kotlin Specialist) with 8+ years of enterprise experience (2016–2026) architecting secure, scalable mobile banking applications across HDFC Bank, IDBI Bank, Bajaj Finserv, IndusInd Bank, and Kotak Mahindra Bank in Mumbai, Maharashtra, India. Specialized in Clean Architecture, MVVM, end-to-end VAPT remediation, Google Play Integrity, and high-performance SDK orchestrations.",
     stats: [
       { label: "Years Experience", value: "8+", detail: "2016 – 2026 Enterprise Android" },
       { label: "Top Banking Clients", value: "10+", detail: "HDFC, IndusInd, IDBI, Kotak, Bajaj & ICICI" },
