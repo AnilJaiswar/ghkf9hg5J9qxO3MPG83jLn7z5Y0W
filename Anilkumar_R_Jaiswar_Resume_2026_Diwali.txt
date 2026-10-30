@@ -1,0 +1,108 @@
+Anilkumar R. Jaiswar
+Sr. Android Developer | 8+ Years | Banking & Fintech Specialist 
+
+anil.rjx8@gmail.com
++91 91375 10191
+Mumbai, Maharashtra
+aniljaiswar.com
+Anilkumar R. Jaiswar
+
+Summary
+=======
+Senior Android Developer with 8+ years of experience architecting secure, scalable enterprise banking and fintech applications. Specialized in mobile architecture, end-to-end VAPT remediation, and complex SDK integrations across HDFC, IDBI, IndusInd, and Kotak Bank.
+
+Experience
+==========
+Sr. Android Developer  ·  Apr 2021 — Present
+Snapwork Technologies Pvt. Ltd.  ·  Chembur, Mumbai
+Strategic Lead Android Engineer driving high-stakes banking applications for India's leading financial institutions, including HDFC, IDBI, IndusInd, and Kotak Mahindra.
+ - Led technical decision-making and designed secure architectures for enterprise mobile applications.
+ - Specialized in VAPT remediation, performance optimization, and complex SDK integrations.
+ - Led 5+ major banking client deliveries simultaneously, ensuring security, scalability, and quality.
+ - Mentored developers and collaborated across teams to maintain architectural standards and high-performance execution.
+
+Mobile Application Developer  ·  Nov 2018 — Aug 2019
+RSalesArm IT Services Pvt. Ltd.  ·  Ghatkopar, Mumbai
+Developed in-house apps (Royce, Tuneem Pro) featuring multimedia streaming, social interactions, event tracking, interactive quizzes, and camera-based attendance with real-time location capture.
+ - Alkem Laboratories — Alkepedia (10K+ Downloads): Feature development and maintenance.
+ - Reckitt Benckiser — RBF3 (Internal Training App): Feature development and maintenance.
+
+Software Developer  ·  Feb 2016 — Nov 2017
+Clear Secured Services Pvt. Ltd.  ·  Sion, Mumbai
+ - Contributed to the development of 3 enterprise Android applications: Fencer Audit, Fencer Telecom, and Cleartask.
+ - Collaborated across SDLC phases including requirement analysis, feature implementation, testing, and Play Store deployment.
+
+Projects
+========
+HDFC Bank (Mobile App)  ·  2023 — Present
+HDFC Smart Account Opening : (Bank Employee Only)
+ - Remediated critical VAPT vulnerabilities and resolved 1,000+ SonarQube defects across multiple full audit cycles.
+ - Implemented custom Liveness Detection pipeline with eye-blink tracking, multi-face prevention, continuity, and lighting analysis.
+ - Integrated key financial SDKs including Novopay and government social security schemes (PMSBY/PMJJBY).
+ - Built 15+ custom plugins for Aadhaar QR parsing, salary slip PDF generation, barcode scanning, document signature cropping, and location watermarking.
+ - Integrated biometric capture workflows supporting Morpho L0/L1 and Precision fingerprint scanner hardware.
+ - Maintained app stability across Android migrations (API 33 to 35), eliminating ANRs and crashes under Microsoft Intune MDM.
+
+IDBI Bank (Mobile App)  ·  2023 — Present
+play.google.com/store/apps/details?id=com.snapwork.IDBI
+IDBI Bank GO Mobile+ : (1Cr+ Downloads)
+ - Remediated critical VAPT/ASST vulnerabilities across 2 audits, deploying Play Integrity anti-tampering defenses.
+ - Architected background scanner auditing 1,500+ apps against I4C and NCIIPC blacklists to neutralize remote threats.
+ - Implemented mandatory RBI digital controls across 3 security layers: device binding, SIM verification, and token handshakes.
+ - Integrated enterprise financial SDKs including Nuclei, Tridentity, Sarvatra UPI, Credit Card modules, and AppIce analytics.
+ - Developed 20+ Cordova plugins for QR/barcode scanning, PDF utilities, Cryptography, Biometrics, and OTPs.
+ - Enforced financial privacy control mechanisms to block unauthorized screen recordings, mirroring, and overlay attacks.
+
+Bajaj Finance (Mobile App)  ·  Apr 2021 — Apr 2023
+play.google.com/store/apps/details?id=org.altruist.BajajExperia
+Bajaj Finance : UPI & Loan App : (10Cr+ Downloads)
+ - Developed complete onboarding and user settings, navigation drawer, dynamic FAQs, deep-link routing, and KPI logger.
+ - Remediated critical VAPT vulnerabilities across release cycles and engineered a Native C++ (JNI) data encryption module.
+ - Implemented dynamic feature modules for 10+ on-demand features, reducing initial app download size by 90%.
+ - Optimized app cold-start sequence by 30% while concurrently initializing 10+ third-party SDKs at launch.
+ - Built high-efficiency background caching across 400+ API endpoints, storing data in local DB with v2/v3 cache flags.
+
+Bajaj Housing Finance (Mobile App)  ·  2023 — Present
+play.google.com/store/apps/details?id=com.bhfl
+Bajaj Housing Finance : (1L+ Downloads)
+ - Remediated production VAPT findings across release cycles, hardening AES-256 data encryption and application security.
+ - Architected dynamic on-demand PDF rendering via Android App Bundles (AAB), reducing base app size by over 50%.
+ - Migrated Android SDKs (API 33–35), resolving recurring ANRs and crashes while ensuring Play Store compliance.
+
+IndusInd Bank (Mobile App)  ·  2023 — Jan 2025
+play.google.com/store/apps/details?id=com.indusland.merchantapp
+Indus Merchant Solutions (Rebranded INDIE for Business) : (1L+ Downloads)
+ - Remediated critical VAPT vulnerabilities and resolved 200+ SonarQube code quality defects across 3 audit cycles.
+ - Integrated 5 enterprise SDKs: OneSpan, MoEngage, AppsFlyer, Signzy VKYC, and Lookout threat defense.
+ - Built 5+ custom Cordova plugins for QR scanning, lock-screen QR generation, TTS alerts, and native device utilities.
+ - Hardened biometric login against edge cases, deep-link race conditions, and malicious app threats.
+
+Kotak Mahindra Bank (Mobile App)  ·  2023 — Jan 2025
+play.google.com/store/apps/details?id=com.snapwork.kotak
+Kotak fyn: Business Banking App : (1L+ Downloads)
+ - Remediated critical VAPT vulnerabilities across 2 audit cycles; utilized Frida for anti-tampering validation.
+ - Integrated the BioCatch SDK to detect behavioral anomalies in real time, effectively mitigating session hijacking and fraud.
+ - Architected a fraud-resistant device-binding framework with dual-SIM hardware detection and automated SMS OTP verification.
+
+Toyota Financial Services India (Mobile App)  ·  2023 — Present
+play.google.com/store/apps/details?id=com.toyotafinance.projectvikram
+Toyota Finance : (10K+ Downloads)
+ - Remediated critical VAPT vulnerabilities across 2 audit cycles, engineering screen-overlay defenses for financing workflows.
+ - Spearheaded target SDK 34 migration and overhauled Gradle/BundleTool pipelines and producing optimized AABs.
+ - Integrated Adstringo document compression SDK, automated SMS OTP reading, stabilized Base64 PDF parsing, and fixed Cordova communication bridges.
+
+HDFC Securities (Mobile App)  ·  2023
+play.google.com/store/apps/details?id=com.hsl.investright
+HDFC Securities InvestRight : (10L+ Downloads)
+ - Remediated critical VAPT vulnerabilities across 2 audits, enforcing SSL/TLS certificate pinning for trusted network APIs.
+ - Executed platform migration to target SDK 34, updating deprecated network libraries for 1M+ active traders.
+ - Resolved HSL Streamer socket connectivity issues and fixed 10+ FNO (Futures & Options) real-time data anomalies.
+
+Education
+=========
+B.Sc. Information Technology,    ·  2015
+Mumbai University  ·  Mumbai, Maharashtra, India
+
+Skills
+======
+Kotlin, Java, Jetpack Compose, Coroutines, Concurrency, Animation, Camera, Biometric, Deep link, Clean Architecture, MVVM, Multi-module architecture, SOLID, Security, VAPT remediation, Play Integrity, Cryptography, SDK integration, Hardware integration, Cordova plugins, Firebase, Gradle, Git, SonarQube, AI tools, Prompt engineering

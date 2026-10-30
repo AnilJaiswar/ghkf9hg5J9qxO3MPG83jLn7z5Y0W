@@ -1,7 +1,7 @@
 // ==========================================================================
 // STANDALONE APPLICATION BUNDLE FOR ANILKUMAR R. JAISWAR PORTFOLIO
 // Compatible with both file:/// (local double-click) and http:// (web server)
-// 100% Genuine User Content â€¢ 3 Active Themes â€¢ Compact Top-Right Hub
+// 100% Genuine User Content • 3 Active Themes • Compact Top-Right Hub
 // ==========================================================================
 
 (function() {
@@ -29,11 +29,11 @@ const portfolioData = {
       country: "India",
       display: "Mumbai, India"
     },
-    summary: "Results-driven Senior Android Developer with 8+ years of experience (2016–2026) in developing, securing, and scaling enterprise-level Android applications. Currently working at Snapwork Technologies Pvt. Ltd. as a Senior Android Developer, handling projects for top banking clients like HDFC Bank, IndusInd Bank, IDBI Bank, Kotak Mahindra Bank, Bajaj Finserv, ICICI Bank, and others. Strong experience in technical decision-making, designing complex system architectures, and leading cross-functional teams to deliver high-quality banking solutions. Skilled in security (VAPT remediation), Cordova hybrid plugin development, and complete SDK integrations. Also experienced in using AI tools like GitHub Copilot, Cursor, and others to improve development speed and code quality.",
+    summary: "Senior Android Developer with 8+ years of experience architecting secure, scalable enterprise banking and fintech applications. Specialized in mobile architecture, end-to-end VAPT remediation, and complex SDK integrations across HDFC, IDBI, IndusInd, and Kotak Bank.",
     stats: [
       { label: "Years Experience", value: "8+", detail: "2016 – 2026 Enterprise Android" },
       { label: "Top Banking Clients", value: "10+", detail: "HDFC, IndusInd, IDBI, Kotak, Bajaj & ICICI" },
-      { label: "Career Roles", value: "4", detail: "Snapwork, RSalesArm, Clear Secured, Startup" },
+      { label: "Career Roles", value: "3", detail: "Snapwork, RSalesArm & Clear Secured" },
       { label: "Technical Skills", value: "28", detail: "Android, Security, VAPT, SDKs & AI Tools" }
     ],
     social: [
@@ -53,8 +53,13 @@ const portfolioData = {
       endDate: "",
       period: "Apr 2021 – Present",
       isCurrent: true,
-      summary: "Strategic Lead Android Engineer managing high-stakes banking applications for India's premier financial institutions. Responsible for critical technical decision-making, defining secure app architectures, and mentoring junior developers. Specialized in vulnerability remediation (VAPT), performance-first engineering, and complex SDK orchestrations. Managing 10+ major banking client deliveries simultaneously with a focus on security-first development and high-performance delivery.",
-      highlights: [],
+      summary: "Strategic Lead Android Engineer driving high-stakes banking applications for India's leading financial institutions, including HDFC, IDBI, IndusInd, and Kotak Mahindra.",
+      highlights: [
+        "Led technical decision-making and designed secure architectures for enterprise mobile applications.",
+        "Specialized in VAPT remediation, performance optimization, and complex SDK integrations.",
+        "Led 5+ major banking client deliveries simultaneously, ensuring security, scalability, and quality.",
+        "Mentored developers and collaborated across teams to maintain architectural standards and high-performance execution."
+      ],
       clientPills: []
     },
     {
@@ -67,9 +72,8 @@ const portfolioData = {
       endDate: "2019-08",
       period: "Nov 2018 – Aug 2019",
       isCurrent: false,
-      summary: "",
+      summary: "Developed in-house apps (Royce, Tuneem Pro) featuring multimedia streaming, social interactions, event tracking, interactive quizzes, and camera-based attendance with real-time location capture.",
       highlights: [
-        "Developed in-house apps (Royce, Tuneem Pro) featuring multimedia streaming (audio/video/image capture and playback), social interactions (comments, likes), event tracking, interactive quizzes, and an automated attendance system.",
         "Alkem Laboratories — Alkepedia (10K+ Downloads): Feature development and maintenance.",
         "Reckitt Benckiser — RBF3 (Internal Training App): Feature development and maintenance."
       ],
@@ -87,23 +91,9 @@ const portfolioData = {
       isCurrent: false,
       summary: "",
       highlights: [
-        "Contributed to the development and delivery of enterprise Android applications, including Fencer Audit (auditing mobile app), Fencer Telecom (internal enterprise mobile app), and Cleartask (home services mobile app).",
-        "Collaborated with cross-functional teams throughout the development lifecycle, contributing to requirement understanding, implementation, testing, and Play Store deployment."
+        "Contributed to the development of 3 enterprise Android applications: Fencer Audit, Fencer Telecom, and Cleartask.",
+        "Collaborated across SDLC phases including requirement analysis, feature implementation, testing, and Play Store deployment."
       ],
-      clientPills: []
-    },
-    {
-      id: "uvczm0b8ksm8",
-      company: "Independent / Startup work",
-      position: "Independent / Startup work — Built 5+ applications across multiple domains",
-      location: "References available on request.",
-      url: "",
-      startDate: "2017",
-      endDate: "2018",
-      period: "2017 – 2018",
-      isCurrent: false,
-      summary: "",
-      highlights: [],
       clientPills: []
     }
   ],
@@ -123,15 +113,14 @@ const portfolioData = {
       color: "#004c8f",
       url: "",
       highlights: [
-        "Remediated critical VAPT vulnerabilities across multiple full audit cycles; resolved SQLite VAPT and code tampering (hash + Play Store verification) issues",
-        "Led multiple target SDK migrations; updated deprecated platform APIs and resolved dependency conflicts to maintain Google Play compliance.",
-        "Built Firebase Barcode Scanner plugin and FCM HTTP V1 notification with hybrid data passing",
-        "Integrated Novopay SDK, PMSBY/JJBY SDK, Intune MDM, Morpho L0/L1 fingerprint SDK",
-        "Implemented Aadhaar QR data parsing, OTP QR plugin, eKYC multi-scenario handling, and liveness detection",
-        "Created dynamic + persistent Logger plugin; fixed camera (crop, black screen, selfie, A4 flow), dual signature capture, ANR/crash issues",
-        "Managed MDM changes, remote config handling (including Firebase downtime), and base64 image/PDF processing"
+        "Remediated critical VAPT vulnerabilities and resolved 1,000+ SonarQube defects across multiple full audit cycles.",
+        "Implemented custom Liveness Detection pipeline with eye-blink tracking, multi-face prevention, continuity, and lighting analysis.",
+        "Integrated key financial SDKs including Novopay and government social security schemes (PMSBY/PMJJBY).",
+        "Built 15+ custom plugins for Aadhaar QR parsing, salary slip PDF generation, barcode scanning, document signature cropping, and location watermarking.",
+        "Integrated biometric capture workflows supporting Morpho L0/L1 and Precision fingerprint scanner hardware.",
+        "Maintained app stability across Android migrations (API 33 to 35), eliminating ANRs and crashes under Microsoft Intune MDM."
       ],
-      tags: ["VAPT Remediation", "Play Store Compliance", "Morpho L0/L1", "Intune MDM", "Aadhaar eKYC", "Cordova Plugins", "FCM HTTP V1", "SQLite VAPT"]
+      tags: ["Bank Employee Only", "VAPT Remediation", "Liveness Detection", "Morpho L0/L1", "Intune MDM", "Aadhaar eKYC", "Novopay SDK", "15+ Plugins"]
     },
     {
       id: "aur8u8i60svx",
@@ -147,41 +136,42 @@ const portfolioData = {
       category: "Retail Banking",
       color: "#007749",
       highlights: [
-        "Full VAPT + AppSec remediation; integrated Play Integrity and device binding security",
-        "Created TextToSpeech, Voice Input, Firebase token, and Network Check custom Cordova plugins",
-        "Integrated ProtecttAI, Sarvatra, Appice, Dynatrace SDKs; updated Cordova version, SMS auto-read, multi-theme handling",
-        "Resolved Play Store policy issues; optimized app startup time, security, and overall performance."
+        "Remediated critical VAPT/ASST vulnerabilities across 2 audits, deploying Play Integrity anti-tampering defenses.",
+        "Architected background scanner auditing 1,500+ apps against I4C and NCIIPC blacklists to neutralize remote threats.",
+        "Implemented mandatory RBI digital controls across 3 security layers: device binding, SIM verification, and token handshakes.",
+        "Integrated enterprise financial SDKs including Nuclei, Tridentity, Sarvatra UPI, Credit Card modules, and AppIce analytics.",
+        "Developed 20+ Cordova plugins for QR/barcode scanning, PDF utilities, Cryptography, Biometrics, and OTPs.",
+        "Enforced financial privacy control mechanisms to block unauthorized screen recordings, mirroring, and overlay attacks."
       ],
-      tags: ["1Cr+ Downloads", "Play Integrity", "Device Binding", "ProtecttAI", "Dynatrace", "Custom Cordova Plugins", "VAPT"]
+      tags: ["1Cr+ Downloads", "Play Integrity", "Device Binding", "RBI Controls", "Nuclei & Tridentity", "20+ Cordova Plugins", "VAPT/ASST"]
     },
     {
       id: "4gmp05mf705e",
       title: "Bajaj Finance : UPI & Loan App",
-      name: "Bajaj Finance Limited (Mobile App)",
-      client: "Bajaj Finance Limited (Mobile App)",
+      name: "Bajaj Finance (Mobile App)",
+      client: "Bajaj Finance (Mobile App)",
       scope: "10Cr+ Downloads",
       description: "Bajaj Finance : UPI & Loan App : (10Cr+ Downloads)",
       tagline: "Bajaj Finance : UPI & Loan App : (10Cr+ Downloads)",
       url: "https://play.google.com/store/apps/details?id=org.altruist.BajajExperia",
-      period: "2021-04 – 2023-04",
+      period: "Apr 2021 – Apr 2023",
       metrics: "10Cr+ Downloads",
       category: "Fintech & Lending",
       color: "#00629b",
       highlights: [
-        "Architected core app infrastructure: Maintenance API engine, Native C++ module (Security-Hardened), Deep-Link router, KPI event logger — driving architectural decisions for the entire ecosystem.",
-        "Led the On-Boarding module end-to-end — optimizing for fast performance and zero-latency user journeys.",
-        "Implemented AEM caching with high-efficiency background processing; reduced app load time by 30%.",
-        "Integrated 12+ SDKs in a single release cycle.",
-        "Remediated critical VAPT vulnerabilities; made executive decisions on security protocols and data encryption strategies.",
-        "Implemented AI-driven code analysis to optimize Gradle builds and reduce binary size."
+        "Developed complete onboarding and user settings, navigation drawer, dynamic FAQs, deep-link routing, and KPI logger.",
+        "Remediated critical VAPT vulnerabilities across release cycles and engineered a Native C++ (JNI) data encryption module.",
+        "Implemented dynamic feature modules for 10+ on-demand features, reducing initial app download size by 90%.",
+        "Optimized app cold-start sequence by 30% while concurrently initializing 10+ third-party SDKs at launch.",
+        "Built high-efficiency background caching across 400+ API endpoints, storing data in local DB with v2/v3 cache flags."
       ],
-      tags: ["10Cr+ Downloads", "Native C++", "Deep-Link Router", "AEM Caching", "12+ SDKs", "VAPT Remediation", "Gradle AI Optimization"]
+      tags: ["10Cr+ Downloads", "Native C++ (JNI)", "Dynamic Feature Modules", "400+ API Caching", "Cold-Start -30%", "VAPT Remediation"]
     },
     {
       id: "ad9hh00fvfup",
       title: "Bajaj Housing Finance",
-      name: "Bajaj Housing Finance Limited (Mobile App)",
-      client: "Bajaj Housing Finance Limited (Mobile App)",
+      name: "Bajaj Housing Finance (Mobile App)",
+      client: "Bajaj Housing Finance (Mobile App)",
       scope: "1L+ Downloads",
       description: "Bajaj Housing Finance : (1L+ Downloads)",
       tagline: "Bajaj Housing Finance : (1L+ Downloads)",
@@ -191,72 +181,92 @@ const portfolioData = {
       category: "Fintech & Housing",
       color: "#004b87",
       highlights: [
-        "Built multi-module PDF viewer using BundleTool (App Bundle); integrated BillDesk V2 (UPI payment)",
-        "Implemented Firebase Performance Monitor; fixed launch delay, app stuck on start, app size optimization",
-        "Created device detail and network detection (5G/4G) plugins; fixed Play Store policy issues and loader bugs"
+        "Remediated production VAPT findings across release cycles, hardening AES-256 data encryption and application security.",
+        "Architected dynamic on-demand PDF rendering via Android App Bundles (AAB), reducing base app size by over 50%.",
+        "Migrated Android SDKs (API 33–35), resolving recurring ANRs and crashes while ensuring Play Store compliance."
       ],
-      tags: ["1L+ Downloads", "BundleTool", "BillDesk V2", "Firebase Perf Monitor", "5G/4G Plugins", "Multi-Module"]
+      tags: ["1L+ Downloads", "AES-256 Encryption", "App Bundles (AAB)", "API 33-35 Migration", "VAPT Hardening"]
     },
     {
       id: "3ubkpjaixjxm",
-      title: "IndusInd Merchant Solutions (IMS)",
-      name: "IndusInd Bank Ltd.(Mobile App)",
-      client: "IndusInd Bank Ltd. (Mobile App)",
-      scope: "5L+ Downloads • Rebranded to INDIE for Business, Jul 2025",
-      description: "IndusInd Merchant Solutions (IMS) — (rebranded to INDIE for Business, Jul 2025) : (5L+ Downloads)",
-      tagline: "IndusInd Merchant Solutions (IMS) — (rebranded to INDIE for Business, Jul 2025) : (5L+ Downloads)",
-      url: "https://play.google.com/store/apps/details?id=com.indusind.indiebiz",
-      period: "2023 – 2025-01",
-      metrics: "5L+ Downloads",
+      title: "Indus Merchant Solutions (Rebranded INDIE for Business)",
+      name: "IndusInd Bank (Mobile App)",
+      client: "IndusInd Bank (Mobile App)",
+      scope: "1L+ Downloads",
+      description: "Indus Merchant Solutions (Rebranded INDIE for Business) : (1L+ Downloads)",
+      tagline: "Indus Merchant Solutions (Rebranded INDIE for Business) : (1L+ Downloads)",
+      url: "https://play.google.com/store/apps/details?id=com.indusland.merchantapp",
+      period: "2023 – Jan 2025",
+      metrics: "1L+ Downloads",
       category: "Merchant & Business Banking",
       color: "#7b1113",
       highlights: [
-        "Led API version migrations; resolved deep-link issues (shielded/non-shielded)",
-        "Integrated OneSpan, MoEngage, AppsFlyer, Signzy VKYC, Lookout SDK",
-        "Built Custom Tab with callback handling, malicious app detection (foreground + background), QR on lock screen",
-        "Developed TextToSpeech with notification, device details plugin, location plugin, contact picker",
-        "Fixed biometric/fingerprint issues, splash freeze, login prevention on malicious detection, ANR/crash issues"
+        "Remediated critical VAPT vulnerabilities and resolved 200+ SonarQube code quality defects across 3 audit cycles.",
+        "Integrated 5 enterprise SDKs: OneSpan, MoEngage, AppsFlyer, Signzy VKYC, and Lookout threat defense.",
+        "Built 5+ custom Cordova plugins for QR scanning, lock-screen QR generation, TTS alerts, and native device utilities.",
+        "Hardened biometric login against edge cases, deep-link race conditions, and malicious app threats."
       ],
-      tags: ["5L+ Downloads", "OneSpan", "Signzy VKYC", "Lookout SDK", "Custom Tab", "Malicious App Detection", "Biometric"]
+      tags: ["1L+ Downloads", "OneSpan", "Signzy VKYC", "Lookout SDK", "5+ Cordova Plugins", "Biometric Security", "VAPT & SonarQube"]
     },
     {
       id: "xxcmpvoi8sst",
       title: "Kotak fyn: Business Banking App",
-      name: "Kotak Mahindra Bank Ltd. (Mobile App)",
-      client: "Kotak Mahindra Bank Ltd. (Mobile App)",
+      name: "Kotak Mahindra Bank (Mobile App)",
+      client: "Kotak Mahindra Bank (Mobile App)",
       scope: "1L+ Downloads",
       description: "Kotak fyn: Business Banking App : (1L+ Downloads)",
       tagline: "Kotak fyn: Business Banking App : (1L+ Downloads)",
       url: "https://play.google.com/store/apps/details?id=com.snapwork.kotak",
-      period: "2023 – 2025-01",
+      period: "2023 – Jan 2025",
       metrics: "1L+ Downloads",
       category: "Corporate & Business Banking",
       color: "#ed1c24",
       highlights: [
-        "Full VAPT cycle + Play Store warning resolution; integrated BioCatch SDK with API responses/callbacks",
-        "Fixed SSL pinning, certificate exceptions, Play Store crashes",
-        "Built SMS reading via Consent API, SIM availability checks, Logger; fixed branch locator, barcode scanner, token, and native C class build issues"
+        "Remediated critical VAPT vulnerabilities across 2 audit cycles; utilized Frida for anti-tampering validation.",
+        "Integrated the BioCatch SDK to detect behavioral anomalies in real time, effectively mitigating session hijacking and fraud.",
+        "Architected a fraud-resistant device-binding framework with dual-SIM hardware detection and automated SMS OTP verification."
       ],
-      tags: ["1L+ Downloads", "BioCatch SDK", "SSL Pinning", "Consent API SMS", "SIM Checks", "Native C Build", "VAPT"]
+      tags: ["1L+ Downloads", "BioCatch SDK", "Device Binding", "Dual-SIM Detection", "Frida Validation", "VAPT Remediation"]
+    },
+    {
+      id: "t9y7toyota01",
+      title: "Toyota Finance",
+      name: "Toyota Financial Services India (Mobile App)",
+      client: "Toyota Financial Services India (Mobile App)",
+      scope: "10K+ Downloads",
+      description: "Toyota Finance : (10K+ Downloads)",
+      tagline: "Toyota Finance : (10K+ Downloads)",
+      url: "https://play.google.com/store/apps/details?id=com.toyotafinance.projectvikram",
+      period: "2023 – Present",
+      metrics: "10K+ Downloads",
+      category: "Auto Finance & Mobility",
+      color: "#d71920",
+      highlights: [
+        "Remediated critical VAPT vulnerabilities across 2 audit cycles, engineering screen-overlay defenses for financing workflows.",
+        "Spearheaded target SDK 34 migration and overhauled Gradle/BundleTool pipelines and producing optimized AABs.",
+        "Integrated Adstringo document compression SDK, automated SMS OTP reading, stabilized Base64 PDF parsing, and fixed Cordova communication bridges."
+      ],
+      tags: ["10K+ Downloads", "Target SDK 34", "Adstringo SDK", "Overlay Defenses", "Cordova Bridges", "VAPT Remediation"]
     },
     {
       id: "x2y02grtl6d3",
       title: "HDFC Securities InvestRight",
-      name: "HDFC SEC: Share Market Trading & Demat Account App (Mobile App)",
-      client: "HDFC SEC: Share Market Trading & Demat Account App (Mobile App)",
+      name: "HDFC Securities (Mobile App)",
+      client: "HDFC Securities (Mobile App)",
       scope: "10L+ Downloads",
       description: "HDFC Securities InvestRight : (10L+ Downloads)",
       tagline: "HDFC Securities InvestRight : (10L+ Downloads)",
       url: "https://play.google.com/store/apps/details?id=com.hsl.investright",
-      period: "Ended 2023",
+      period: "2023",
       metrics: "10L+ Downloads",
       category: "Trading & Demat",
       color: "#004c8f",
       highlights: [
-        "Full VAPT + SSL certificate integration; API migration; fixed Gainer/Loser API inconsistencies",
-        "Resolved HSL Streamer connectivity, FNO date null values, device IP duplicate, and font license issues"
+        "Remediated critical VAPT vulnerabilities across 2 audits, enforcing SSL/TLS certificate pinning for trusted network APIs.",
+        "Executed platform migration to target SDK 34, updating deprecated network libraries for 1M+ active traders.",
+        "Resolved HSL Streamer socket connectivity issues and fixed 10+ FNO (Futures & Options) real-time data anomalies."
       ],
-      tags: ["10L+ Downloads", "HSL Streamer", "Full VAPT", "SSL Certificate", "API Migration"]
+      tags: ["10L+ Downloads", "SSL/TLS Pinning", "Target SDK 34", "HSL Streamer", "FNO Data Feeds", "VAPT Remediation"]
     }
   ],
 
@@ -511,7 +521,7 @@ const portfolioData = {
       <div class="modal-action-row">
         ${project.url ? `
           <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="modal-link-btn">
-            <span>View on Google Play</span> â†—
+            <span>View on Google Play</span> ↗
           </a>
         ` : `
           <span style="font-size:0.85rem; color:#64748b; font-weight:600;">Enterprise Bank Internal Application</span>
@@ -910,6 +920,7 @@ function renderThemeD(data, container, utils) {
     "ad9hh00fvfup": "🏠",
     "3ubkpjaixjxm": "🛍️",
     "xxcmpvoi8sst": "🏢",
+    "t9y7toyota01": "🚗",
     "x2y02grtl6d3": "📈"
   };
 
@@ -1718,7 +1729,7 @@ function renderThemeE(data, container, utils) {
 
     updateModeButtonUI();
     playSound('mode');
-    showToast((activeThemeMode === "dark" ? "ðŸŒ™ Dark Mode" : "â˜€ï¸ Light Mode") + " Activated");
+    showToast((activeThemeMode === "dark" ? "🌙 Dark Mode" : "☀️ Light Mode") + " Activated");
   }
 
   function updateModeButtonUI() {
@@ -1787,7 +1798,7 @@ function renderThemeE(data, container, utils) {
         isSoundEnabled = !isSoundEnabled;
         localStorage.setItem('anil_portfolio_sound', isSoundEnabled.toString());
         soundBtn.classList.toggle('active', isSoundEnabled);
-        showToast(isSoundEnabled ? "ðŸ”Š Sound effects on" : "ðŸ”‡ Sound effects muted");
+        showToast(isSoundEnabled ? "🔊 Sound effects on" : "🔇 Sound effects muted");
         if (isSoundEnabled) playSound('pop');
       });
     }

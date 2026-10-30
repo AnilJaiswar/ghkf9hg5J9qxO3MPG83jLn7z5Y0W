@@ -11,6 +11,7 @@ export function renderThemeD(data, container, utils) {
     "ad9hh00fvfup": "🏠",
     "3ubkpjaixjxm": "🛍️",
     "xxcmpvoi8sst": "🏢",
+    "t9y7toyota01": "🚗",
     "x2y02grtl6d3": "📈"
   };
 
