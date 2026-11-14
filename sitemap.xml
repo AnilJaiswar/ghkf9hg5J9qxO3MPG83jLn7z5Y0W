@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aniljaiswar.com/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://aniljaiswar.com/assets/images/theme_a_portrait.webp</image:loc>
-      <image:title>Anil Jaiswar (Anilkumar R. Jaiswar / Anil Jaiswal) — Senior Android Developer Mumbai</image:title>
-      <image:caption>Official portrait of Anil Jaiswar, Senior Android Developer architecting enterprise mobile banking apps in Mumbai, Maharashtra, India</image:caption>
-    </image:image>
   </url>
 </urlset>
