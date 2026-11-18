@@ -656,7 +656,7 @@ function renderThemeA(data, container, utils) {
                 </div>
 
                 <p class="maly-hero-summary">
-                  8+ years developing, securing, and scaling enterprise-level Android applications. Currently at <strong>Snapwork Technologies</strong>, architecting solutions for premier banking clients including HDFC Bank, IndusInd Bank, Kotak Mahindra Bank, IDBI Bank, and Bajaj Finserv with proven expertise in VAPT security remediation and SDK orchestrations.
+                  8+ years in mobile app development. VAPT expert behind flagship banking apps: HDFC Smart Account Opening, IDBI GO Mobile+, and Bajaj Finance. <span data-nosnippet>Currently at <strong>Snapwork Technologies</strong>, architecting solutions for premier banking clients including HDFC Bank, IndusInd Bank, Kotak Mahindra Bank, IDBI Bank, and Bajaj Finserv with proven expertise in VAPT security remediation and SDK orchestrations.</span>
                 </p>
 
                 <div class="maly-hero-specs">
